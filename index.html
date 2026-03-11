@@ -1,167 +1,457 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="hi-IN">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jowa</title>
-  
-  <meta name="title" content="Jowa">
-  <meta name="description" content="Independent day 2023">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="rajp7jowa">
-  <meta property="og:title" content="Jowa">
-  <meta property="og:description" content="Independent day 2023">
-  <meta property="og:image" content="https://rajp7jowa.github.io/jowa/IMG-20230815-WA0047.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="rajp7jowa">
-  <meta property="twitter:title" content="Jowa">
-  <meta property="twitter:description" content="Independent day 2023">
-  <meta property="twitter:image" content="https://rajp7jowa.github.io/jowa/IMG-20230815-WA0047.jpg">
-  <noscript>
-    <style type="text/css">
-      [data-aos] {
-        opacity: 1 !important;
-        transform: translate(0) scale(1) !important;
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="जोवा गाँव - एक आधुनिक, ऐतिहासिक और कृषि-आधारित समुदाय। Jowa Village - Historical, Agricultural and Cultural Hub.">
+    <meta name="keywords" content="Jowa, जोवा, Kareli, करेली, Narsimpur, नर्सिंहपुर, Village, गाँव, Agriculture, कृषि">
+    <meta property="og:title" content="Welcome to Jowa Village">
+    <meta property="og:description" content="Discover the rich heritage and vibrant community of Jowa Village">
+    <meta property="og:image" content="https://rajp7jowa.github.io/jowa/IMG-20230815-WA0047.jpg">
+    <title>Jowa Village - जोवा गाँव</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Mukta', 'Poppins', sans-serif; }
+        body { background-color: #faf6f1; color: #2d3436; }
+        .hero-gradient { background: linear-gradient(135deg, #2d5016 0%, #5a3a2a 100%); }
+        .earth-brown { background-color: #8b6f47; }
+        .forest-green { background-color: #2d5016; }
+        .accent-earth { color: #d4a574; }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 50; justify-content: center; align-items: center; }
+        .modal.active { display: flex; }
+        .modal img { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .close-modal { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; font-weight: bold; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 30px; position: relative; padding-bottom: 15px; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 4px; background-color: #d4a574; border-radius: 2px; }
+        input, textarea { background-color: #fff9f5; border: 2px solid #d4a574; }
+        input:focus, textarea:focus { border-color: #2d5016; background-color: #fffbf7; }
+        .btn-primary { background-color: #2d5016; color: white; transition: all 0.3s; }
+        .btn-primary:hover { background-color: #8b6f47; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .stat-card { background: linear-gradient(135deg, #f9f6f3, #faf6f1); border-left: 4px solid #d4a574; }
+        .nav-link { transition: all 0.3s; }
+        .nav-link:hover { color: #d4a574; }
+        .timeline-item { position: relative; padding-left: 40px; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: 0; width: 20px; height: 20px; background-color: #d4a574; border-radius: 50%; border: 3px solid #2d5016; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #d4a574; }
+        th { background-color: #2d5016; color: white; }
+        tr:hover { background-color: #f9f6f3; }
+        input[type="number"] { width: 80px; padding: 4px; border: 1px solid #d4a574; border-radius: 4px; }
     </style>
-  </noscript>
 </head>
-<body>
+<body class="smooth-scroll">
 
+<!-- Navigation -->
+<nav class="forest-green text-white sticky top-0 z-40 shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">🌾 जोवा | Jowa</h1>
+        <div class="hidden md:flex space-x-6">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#independence" class="nav-link">Independence Day</a>
+            <a href="#about" class="nav-link">History</a>
+            <a href="#society" class="nav-link">Community</a>
+            <a href="#economy" class="nav-link">Economy</a>
+            <a href="#dairy" class="nav-link">Dairy</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="feedback.html" class="nav-link accent-earth font-bold">📝 Feedback</a>
+        </div>
+    </div>
+</nav>
 
- <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+<!-- Hero Section -->
+<section id="home" class="hero-gradient text-white py-20 px-4">
+    <div class="container mx-auto text-center">
+        <h2 class="text-5xl font-bold mb-6">Welcome to Jowa Village</h2>
+        <p class="text-2xl mb-4">स्वागत है जोवा गाँव में</p>
+        <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-8">जहाँ काली मिट्टी की समृद्धि, गोंडवाना की विरासत, और किसानों की मेहनत एक अद्भुत समुदाय का निर्माण करती है।</p>
+        <p class="text-lg italic">Where Black Soil prosperity, Gondwana heritage, and farmer's dedication create a thriving community.</p>
+    </div>
+</section>
 
-    .gallery{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 5px;
-    }
-    h3,h4, p{
-        padding: 0px 10px;
-        line-height: 1.8rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      max-width: 300px; /* Set a maximum width for the gallery items */
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+<!-- Independence Day 2023 Section -->
+<section id="independence" class="py-20 px-4 bg-white">
+    <div class="container mx-auto">
+        <h3 class="section-title text-forest-green">🇮🇳 77वें स्वतंत्रता दिवस की 76वर्षगांठ | Independence Day 2023</h3>
+        <div class="mb-12 max-w-4xl mx-auto">
+            <p class="text-lg leading-relaxed mb-6">77वें स्वतंत्रता दिवस की 76वर्षगांठ की कुछ झलकियाँ, जिनमें बच्चों की सक्रिय भागीदारी और पूर्व जिला अध्यक्ष देवकुआर बाई द्वारा आवार्ड से सम्मानित किए जाने का समर्पण है। इस उत्सव की सुंदरता को छवियाँ साझा करती हैं।</p>
+            <p class="text-lg leading-relaxed italic text-gray-700">Glimpses of celebrating India's 77th Independence Day with the active participation of children and the honor of being felicitated by former District President Devkuar Bai. These images beautifully capture the essence of our festival.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0011.jpg')"><img src="IMG-20230815-WA0011.jpg" alt="Independence Day Image 1"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0012.jpg')"><img src="IMG-20230815-WA0012.jpg" alt="Independence Day Image 2"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0013.jpg')"><img src="IMG-20230815-WA0013.jpg" alt="Independence Day Image 3"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0014.jpg')"><img src="IMG-20230815-WA0014.jpg" alt="Independence Day Image 4"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0015.jpg')"><img src="IMG-20230815-WA0015.jpg" alt="Independence Day Image 5"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0016.jpg')"><img src="IMG-20230815-WA0016.jpg" alt="Independence Day Image 6"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0017.jpg')"><img src="IMG-20230815-WA0017.jpg" alt="Independence Day Image 7"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0018.jpg')"><img src="IMG-20230815-WA0018.jpg" alt="Independence Day Image 8"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0019.jpg')"><img src="IMG-20230815-WA0019.jpg" alt="Independence Day Image 9"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0020.jpg')"><img src="IMG-20230815-WA0020.jpg" alt="Independence Day Image 10"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0021.jpg')"><img src="IMG-20230815-WA0021.jpg" alt="Independence Day Image 11"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0022.jpg')"><img src="IMG-20230815-WA0022.jpg" alt="Independence Day Image 12"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0023.jpg')"><img src="IMG-20230815-WA0023.jpg" alt="Independence Day Image 13"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0024.jpg')"><img src="IMG-20230815-WA0024.jpg" alt="Independence Day Image 14"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0025.jpg')"><img src="IMG-20230815-WA0025.jpg" alt="Independence Day Image 15"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0026.jpg')"><img src="IMG-20230815-WA0026.jpg" alt="Independence Day Image 16"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0027.jpg')"><img src="IMG-20230815-WA0027.jpg" alt="Independence Day Image 17"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0028.jpg')"><img src="IMG-20230815-WA0028.jpg" alt="Independence Day Image 18"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0029.jpg')"><img src="IMG-20230815-WA0029.jpg" alt="Independence Day Image 19"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0030.jpg')"><img src="IMG-20230815-WA0030.jpg" alt="Independence Day Image 20"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0031.jpg')"><img src="IMG-20230815-WA0031.jpg" alt="Independence Day Image 21"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0032.jpg')"><img src="IMG-20230815-WA0032.jpg" alt="Independence Day Image 22"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0033.jpg')"><img src="IMG-20230815-WA0033.jpg" alt="Independence Day Image 23"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0034.jpg')"><img src="IMG-20230815-WA0034.jpg" alt="Independence Day Image 24"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0035.jpg')"><img src="IMG-20230815-WA0035.jpg" alt="Independence Day Image 25"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0036.jpg')"><img src="IMG-20230815-WA0036.jpg" alt="Independence Day Image 26"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0037.jpg')"><img src="IMG-20230815-WA0037.jpg" alt="Independence Day Image 27"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0038.jpg')"><img src="IMG-20230815-WA0038.jpg" alt="Independence Day Image 28"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0039.jpg')"><img src="IMG-20230815-WA0039.jpg" alt="Independence Day Image 29"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0040.jpg')"><img src="IMG-20230815-WA0040.jpg" alt="Independence Day Image 30"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0041.jpg')"><img src="IMG-20230815-WA0041.jpg" alt="Independence Day Image 31"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0042.jpg')"><img src="IMG-20230815-WA0042.jpg" alt="Independence Day Image 32"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0043.jpg')"><img src="IMG-20230815-WA0043.jpg" alt="Independence Day Image 33"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0044.jpg')"><img src="IMG-20230815-WA0044.jpg" alt="Independence Day Image 34"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0045.jpg')"><img src="IMG-20230815-WA0045.jpg" alt="Independence Day Image 35"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0046.jpg')"><img src="IMG-20230815-WA0046.jpg" alt="Independence Day Image 36"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0047.jpg')"><img src="IMG-20230815-WA0047.jpg" alt="Independence Day Image 37"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0048.jpg')"><img src="IMG-20230815-WA0048.jpg" alt="Independence Day Image 38"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0049.jpg')"><img src="IMG-20230815-WA0049.jpg" alt="Independence Day Image 39"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0050.jpg')"><img src="IMG-20230815-WA0050.jpg" alt="Independence Day Image 40"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0051.jpg')"><img src="IMG-20230815-WA0051.jpg" alt="Independence Day Image 41"></div>
+        </div>
+    </div>
+</section>
 
-    .gallery img:hover {
-      transform: scale(1.1);
-    }
+<!-- History & Timeline Section -->
+<section id="about" class="py-20 px-4 bg-gradient-to-r from-orange-50 to-yellow-50">
+    <div class="container mx-auto">
+        <h3 class="section-title text-forest-green">📚 History & Heritage | इतिहास और विरासत</h3>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="timeline-item">
+                <h4 class="text-xl font-bold mb-3 text-forest-green">Gondwana Era (प्राचीन गोंडवाना)</h4>
+                <p class="text-gray-700 leading-relaxed">Rock paintings discovered at 'Binki Tola' near Jowa reveal this region's human settlement dating back thousands of years. In the 15th century, this entire region was part of King Sangram Shah's glorious Gondwana Empire. The foundation of our agricultural culture was laid during this era.</p>
+            </div>
+            <div class="timeline-item">
+                <h4 class="text-xl font-bold mb-3 text-forest-green">Cotton Mill Era (1904 - व्यापारिक क्रांति)</h4>
+                <p class="text-gray-700 leading-relaxed">In 1904, King Gokul Das established a major Cotton Mill in nearby Kareli city. Jowa farmers transported their cotton grown in 'black soil' via bullock carts to the mill. This historic event transformed Jowa farmers to commercial agriculture, evolving into today's sugarcane farming legacy.</p>
+            </div>
+            <div class="timeline-item">
+                <h4 class="text-xl font-bold mb-3 text-forest-green">Narmada Valley Connection (नर्मदा घाटी)</h4>
+                <p class="text-gray-700 leading-relaxed">Jowa is deeply connected to the Narmada River valley's ancient and medieval civilizations. This sacred connection to 'Narmada Maiya' (Mother Narmada) remains central to village life, with rituals at the nearby sacred Barman Ghat.</p>
+            </div>
+            <div class="timeline-item">
+                <h4 class="text-xl font-bold mb-3 text-forest-green">Modern Era (आधुनिक समय)</h4>
+                <p class="text-gray-700 leading-relaxed">Today's Jowa represents progressive thinking, with outstanding sex ratios (1037) and child sex ratios (1471) - a testament to the progressive values championed by IAS Officer Tapasya Parihar, the village's daughter.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-    }
+<!-- Society & Demographics Section -->
+<section id="society" class="py-20 px-4 bg-white">
+    <div class="container mx-auto">
+        <h3 class="section-title text-forest-green">👥 Community & Demographics | समाज और जनांकिकी</h3>
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="stat-card p-8 rounded-lg shadow-lg">
+                <h4 class="text-3xl font-bold text-forest-green mb-2">1037</h4>
+                <p class="text-lg text-gray-700">Female-Male Sex Ratio</p>
+                <p class="text-sm text-gray-500">महिला-पुरुष अनुपात</p>
+            </div>
+            <div class="stat-card p-8 rounded-lg shadow-lg">
+                <h4 class="text-3xl font-bold text-forest-green mb-2">1471</h4>
+                <p class="text-lg text-gray-700">Child Sex Ratio</p>
+                <p class="text-sm text-gray-500">बाल लिंगानुपात</p>
+            </div>
+            <div class="stat-card p-8 rounded-lg shadow-lg">
+                <h4 class="text-3xl font-bold text-forest-green mb-2">73%</h4>
+                <p class="text-lg text-gray-700">General & OBC Population</p>
+                <p class="text-sm text-gray-500">सामान्य व पिछड़ा वर्ग</p>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-400">
+                <h4 class="text-xl font-bold mb-3 text-blue-900">Scheduled Tribes (ST) - 16%</h4>
+                <p class="text-gray-700">Gond community and tribal populations - the historical original inhabitants with deep roots in agriculture and forestry.</p>
+            </div>
+            <div class="bg-green-50 p-8 rounded-lg border-l-4 border-green-400">
+                <h4 class="text-xl font-bold mb-3 text-green-900">Scheduled Castes (SC) - 11%</h4>
+                <p class="text-gray-700">Mehra and local communities vital to labor force and sugarcane processing - the backbone of our agricultural industry.</p>
+            </div>
+            <div class="bg-purple-50 p-8 rounded-lg border-l-4 border-purple-400">
+                <h4 class="text-xl font-bold mb-3 text-purple-900">Progressive Values</h4>
+                <p class="text-gray-700">IAS Officer Tapasya Parihar (2018 batch), village daughter, who refused the Kanyadaan ritual - symbol of our progressive mindset.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    .modal img {
-      width: 80%;
-      height: auto;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
+<!-- Economy & Agriculture Section -->
+<section id="economy" class="py-20 px-4 bg-gradient-to-r from-green-50 to-emerald-50">
+    <div class="container mx-auto">
+        <h3 class="section-title text-forest-green">💼 Economy & Agriculture | अर्थव्यवस्था और कृषि</h3>
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h4 class="text-2xl font-bold mb-4 text-forest-green">🌍 Black Cotton Soil - The Foundation</h4>
+                <p class="text-gray-700 leading-relaxed mb-4">Jowa's greatest economic strength lies in its 'heavy black soil' (काली मिट्टी). With excellent irrigation facilities, our agricultural land value ranks among the highest in Narsimpur district. This soil is ideal for sugarcane and wheat cultivation.</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Premium agricultural land valuation</li>
+                    <li>Excellent irrigation infrastructure</li>
+                    <li>High-yield cultivation potential</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h4 class="text-2xl font-bold mb-4 text-forest-green">🥃 Sugarcane & Gur (Jaggery) Legacy</h4>
+                <p class="text-gray-700 leading-relaxed mb-4">Proximity to Kareli's world-famous 'Gur Mandi' (Jaggery Market) drives significant investment in sugarcane farming. Despite high costs (seeds, fertilizers, labor), jaggery trade profits far exceed expenses, ensuring farmer prosperity.</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>High cash crop investment</li>
+                    <li>Access to global jaggery market</li>
+                    <li>Sustained farmer income growth</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h4 class="text-2xl font-bold mb-4 text-forest-green">🐄 Dairy & Animal Husbandry - Growing Sector</h4>
+            <p class="text-gray-700 leading-relaxed mb-6">Alongside sugarcane and wheat cultivation, animal husbandry and dairy industry (cow and buffalo milk) represent an emerging and robust part of our economy. Transparent milk quality pricing (based on FAT and SNF content) has significantly boosted farmer income and economic stability.</p>
+            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                <p class="text-gray-700"><strong>Cost of Living Benefits:</strong> As a self-sufficient village, daily essentials (milk, vegetables, grains) are remarkably affordable compared to urban areas. For modern purchases and larger items, nearby Kareli city (3 km away) provides convenient access.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      color: #fff;
-      font-size: 24px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
+<!-- Dairy Widget Section -->
+<section id="dairy" class="py-20 px-4 bg-white">
+    <div class="container mx-auto">
+        <h3 class="section-title text-forest-green">🥛 Dairy Price Management | दूध दर सूची</h3>
+        <p class="text-gray-700 mb-8 text-center">Edit and manage FAT and SNF (Solids Not Fat) price lists for Cow and Buffalo milk</p>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="bg-blue-50 p-8 rounded-lg">
+                <h4 class="text-xl font-bold mb-6 text-blue-900">🐄 Cow Milk Prices</h4>
+                <table class="w-full mb-4">
+                    <thead>
+                        <tr><th class="text-left">Parameter</th><th>Value (₹)</th><th class="text-center">Action</th></tr>
+                    </thead>
+                    <tbody id="cowTable">
+                        <tr><td>FAT (3.5%)</td><td><input type="number" id="cowFat" value="45" step="0.5"></td><td><button onclick="saveCowData()" class="bg-blue-500 text-white px-3 py-1 rounded text-sm">Save</button></td></tr>
+                        <tr><td>SNF (8.0%)</td><td><input type="number" id="cowSnf" value="25" step="0.5"></td><td></td></tr>
+                    </tbody>
+                </table>
+                <p class="text-sm text-gray-600 italic">Last updated: <span id="cowTime">Now</span></p>
+            </div>
 
-<h3>Independent Day 2023 <br><small> स्वतंत्रता दिवस 2023</small> </h3>
-<p> 77वें स्वतंत्रता दिवस की 76वर्षगांठ की कुछ झलकियाँ, जिनमें बच्चों की सक्रिय भागीदारी और पूर्व जिला अध्यक्ष देवकुआर बाई द्वारा आवार्ड से सम्मानित किए जाने का समर्पण है। <br> इस उत्सव की सुंदरता को छवियाँ साझा करती हैं । </p> 
-<br>
-<div class="gallery">
- <!-- Add more images as needed -->
-<img src="IMG-20230815-WA0011.jpg" onclick="openModal('IMG-20230815-WA0011.jpg')" alt="Independent day 2023 Image 1">
-<img src="IMG-20230815-WA0012.jpg" onclick="openModal('IMG-20230815-WA0012.jpg')" alt="Independent day 2023 Image 2">
-<img src="IMG-20230815-WA0013.jpg" onclick="openModal('IMG-20230815-WA0013.jpg')" alt="Independent day 2023 Image 3">
-<img src="IMG-20230815-WA0014.jpg" onclick="openModal('IMG-20230815-WA0014.jpg')" alt="Independent day 2023 Image 4">
-<img src="IMG-20230815-WA0015.jpg" onclick="openModal('IMG-20230815-WA0015.jpg')" alt="Independent day 2023 Image 5">
-<img src="IMG-20230815-WA0016.jpg" onclick="openModal('IMG-20230815-WA0016.jpg')" alt="Independent day 2023 Image 6">
-<img src="IMG-20230815-WA0017.jpg" onclick="openModal('IMG-20230815-WA0017.jpg')" alt="Independent day 2023 Image 7">
-<img src="IMG-20230815-WA0018.jpg" onclick="openModal('IMG-20230815-WA0018.jpg')" alt="Independent day 2023 Image 8">
-<img src="IMG-20230815-WA0019.jpg" onclick="openModal('IMG-20230815-WA0019.jpg')" alt="Independent day 2023 Image 9">
-<img src="IMG-20230815-WA0020.jpg" onclick="openModal('IMG-20230815-WA0020.jpg')" alt="Independent day 2023 Image 10">
-<img src="IMG-20230815-WA0021.jpg" onclick="openModal('IMG-20230815-WA0021.jpg')" alt="Independent day 2023 Image 11">
-<img src="IMG-20230815-WA0022.jpg" onclick="openModal('IMG-20230815-WA0022.jpg')" alt="Independent day 2023 Image 12">
-<img src="IMG-20230815-WA0023.jpg" onclick="openModal('IMG-20230815-WA0023.jpg')" alt="Independent day 2023 Image 13">
-<img src="IMG-20230815-WA0024.jpg" onclick="openModal('IMG-20230815-WA0024.jpg')" alt="Independent day 2023 Image 14">
-<img src="IMG-20230815-WA0025.jpg" onclick="openModal('IMG-20230815-WA0025.jpg')" alt="Independent day 2023 Image 15">
-<img src="IMG-20230815-WA0026.jpg" onclick="openModal('IMG-20230815-WA0026.jpg')" alt="Independent day 2023 Image 16">
-<img src="IMG-20230815-WA0027.jpg" onclick="openModal('IMG-20230815-WA0027.jpg')" alt="Independent day 2023 Image 17">
-<img src="IMG-20230815-WA0028.jpg" onclick="openModal('IMG-20230815-WA0028.jpg')" alt="Independent day 2023 Image 18">
-<img src="IMG-20230815-WA0029.jpg" onclick="openModal('IMG-20230815-WA0029.jpg')" alt="Independent day 2023 Image 19">
-<img src="IMG-20230815-WA0030.jpg" onclick="openModal('IMG-20230815-WA0030.jpg')" alt="Independent day 2023 Image 20">
-<img src="IMG-20230815-WA0031.jpg" onclick="openModal('IMG-20230815-WA0031.jpg')" alt="Independent day 2023 Image 21">
-<img src="IMG-20230815-WA0032.jpg" onclick="openModal('IMG-20230815-WA0032.jpg')" alt="Independent day 2023 Image 22">
-<img src="IMG-20230815-WA0033.jpg" onclick="openModal('IMG-20230815-WA0033.jpg')" alt="Independent day 2023 Image 23">
-<img src="IMG-20230815-WA0034.jpg" onclick="openModal('IMG-20230815-WA0034.jpg')" alt="Independent day 2023 Image 24">
-<img src="IMG-20230815-WA0035.jpg" onclick="openModal('IMG-20230815-WA0035.jpg')" alt="Independent day 2023 Image 25">
-<img src="IMG-20230815-WA0036.jpg" onclick="openModal('IMG-20230815-WA0036.jpg')" alt="Independent day 2023 Image 26">
-<img src="IMG-20230815-WA0037.jpg" onclick="openModal('IMG-20230815-WA0037.jpg')" alt="Independent day 2023 Image 27">
-<img src="IMG-20230815-WA0038.jpg" onclick="openModal('IMG-20230815-WA0038.jpg')" alt="Independent day 2023 Image 28">
-<img src="IMG-20230815-WA0039.jpg" onclick="openModal('IMG-20230815-WA0039.jpg')" alt="Independent day 2023 Image 29">
-<img src="IMG-20230815-WA0040.jpg" onclick="openModal('IMG-20230815-WA0040.jpg')" alt="Independent day 2023 Image 30">
-<img src="IMG-20230815-WA0041.jpg" onclick="openModal('IMG-20230815-WA0041.jpg')" alt="Independent day 2023 Image 31">
-<img src="IMG-20230815-WA0042.jpg" onclick="openModal('IMG-20230815-WA0042.jpg')" alt="Independent day 2023 Image 32">
-<img src="IMG-20230815-WA0043.jpg" onclick="openModal('IMG-20230815-WA0043.jpg')" alt="Independent day 2023 Image 33">
-<img src="IMG-20230815-WA0044.jpg" onclick="openModal('IMG-20230815-WA0044.jpg')" alt="Independent day 2023 Image 34">
-<img src="IMG-20230815-WA0045.jpg" onclick="openModal('IMG-20230815-WA0045.jpg')" alt="Independent day 2023 Image 35">
-<img src="IMG-20230815-WA0046.jpg" onclick="openModal('IMG-20230815-WA0046.jpg')" alt="Independent day 2023 Image 36">
-<img src="IMG-20230815-WA0047.jpg" onclick="openModal('IMG-20230815-WA0047.jpg')" alt="Independent day 2023 Image 37">
-<img src="IMG-20230815-WA0048.jpg" onclick="openModal('IMG-20230815-WA0048.jpg')" alt="Independent day 2023 Image 38">
-<img src="IMG-20230815-WA0049.jpg" onclick="openModal('IMG-20230815-WA0049.jpg')" alt="Independent day 2023 Image 39">
-<img src="IMG-20230815-WA0050.jpg" onclick="openModal('IMG-20230815-WA0050.jpg')" alt="Independent day 2023 Image 40">
-<img src="IMG-20230815-WA0051.jpg" onclick="openModal('IMG-20230815-WA0051.jpg')" alt="Independent day 2023 Image 41">
-  
+            <div class="bg-amber-50 p-8 rounded-lg">
+                <h4 class="text-xl font-bold mb-6 text-amber-900">🦬 Buffalo Milk Prices</h4>
+                <table class="w-full mb-4">
+                    <thead>
+                        <tr><th class="text-left">Parameter</th><th>Value (₹)</th><th class="text-center">Action</th></tr>
+                    </thead>
+                    <tbody id="buffaloTable">
+                        <tr><td>FAT (6.0%)</td><td><input type="number" id="buffaleFat" value="65" step="0.5"></td><td><button onclick="saveBuffaloData()" class="bg-amber-600 text-white px-3 py-1 rounded text-sm">Save</button></td></tr>
+                        <tr><td>SNF (9.0%)</td><td><input type="number" id="buffaloSnf" value="35" step="0.5"></td><td></td></tr>
+                    </tbody>
+                </table>
+                <p class="text-sm text-gray-600 italic">Last updated: <span id="buffaloTime">Now</span></p>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-gradient-to-r from-green-100 to-emerald-100 p-8 rounded-lg">
+            <button onclick="backupToDrive()" class="btn-primary px-8 py-3 rounded-lg font-bold text-lg shadow-lg">📊 Backup to Google Drive</button>
+            <p class="text-gray-700 mt-4">Mock backup feature - In production, this would sync with Google Drive/Cloud Storage</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="py-20 px-4 bg-gradient-to-br from-forest-green to-green-900 text-white">
+    <div class="container mx-auto">
+        <h3 class="section-title accent-earth">📞 Contact Us | हमसे संपर्क करें</h3>
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div>
+                <h4 class="text-2xl font-bold mb-6">Send us a Message</h4>
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block mb-2 font-semibold">Your Name / आपका नाम</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="Enter your full name">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold">Email / ईमेल</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="your.email@example.com">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold">Phone / फोन</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="+91 XXXXX XXXXX">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold">Subject / विषय</label>
+                        <input type="text" name="subject" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="What is this about?">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold">Message / संदेश</label>
+                        <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full px-6 py-3 rounded-lg font-bold text-lg">Send Message 📨</button>
+                </form>
+                <div id="formMessage" class="mt-4 text-center"></div>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h4 class="text-2xl font-bold mb-6">Get in Touch</h4>
+                <div class="space-y-6">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
+                        <h5 class="text-xl font-bold mb-2">📍 Village Office</h5>
+                        <p class="text-gray-100">Jowa (Joba) Village<br>Taluk: Kareli, District: Narsimpur<br>State: Madhya Pradesh, India</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
+                        <h5 class="text-xl font-bold mb-2">📞 Contact Information</h5>
+                        <p class="text-gray-100">Gram Panchayat Office<br>Phone: +91 XXXXX XXXXX<br>Email: jowa.village@mp.gov.in</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
+                        <h5 class="text-xl font-bold mb-2">🚇 Nearby Landmarks</h5>
+                        <p class="text-gray-100">📍 Kareli Railway Station (3 km)<br>📍 Barman Ghat (2 km) - Sacred ritual site<br>📍 Kareli Gur Mandi (4 km)</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
+                        <h5 class="text-xl font-bold mb-2">🕐 Office Hours</h5>
+                        <p class="text-gray-100">Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
+                        <h5 class="text-xl font-bold mb-2">🌐 Connect With Us</h5>
+                        <div class="flex space-x-4 mb-3">
+                            <a href="#" class="text-2xl hover:text-yellow-300 transition">📱 WhatsApp</a>
+                            <a href="#" class="text-2xl hover:text-yellow-300 transition">👥 Facebook</a>
+                        </div>
+                        <p class="text-sm text-gray-200">Follow us for latest village updates and announcements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="forest-green text-white py-12 px-4">
+    <div class="container mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h5 class="font-bold mb-4">🌾 Jowa Village</h5>
+                <p class="text-gray-200 text-sm">Preserving heritage, building futures through agriculture and community values.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Quick Links</h5>
+                <ul class="text-gray-200 text-sm space-y-2">
+                    <li><a href="#home" class="hover:accent-earth">Home</a></li>
+                    <li><a href="#about" class="hover:accent-earth">History</a></li>
+                    <li><a href="#contact" class="hover:accent-earth">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Important Places</h5>
+                <ul class="text-gray-200 text-sm space-y-2">
+                    <li>📍 Kareli Railway Station</li>
+                    <li>📍 Barman Ghat (Sacred Site)</li>
+                    <li>📍 Kareli Gur Mandi</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Quick Facts</h5>
+                <ul class="text-gray-200 text-sm space-y-2">
+                    <li>Sex Ratio: 1037</li>
+                    <li>Child Ratio: 1471</li>
+                    <li>Founded: Gondwana Era</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-green-700 mb-6">
+        <div class="text-center text-gray-300 text-sm">
+            <p>&copy; 2026 Jowa Village, Kareli, Narsimpur, Madhya Pradesh. All rights reserved.</p>
+            <p class="mt-2">Built with ❤️ for our community | Designed for responsive mobile-first experience</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Gallery Image">
 </div>
 
-<div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img id="modalImage" src="" alt="Modal Image">
-</div>
-
+<!-- JavaScript -->
 <script>
-  function openModal(imageSrc) {
-    document.getElementById("myModal").style.display = "flex";
-    document.getElementById("modalImage").src = imageSrc;
-  }
+    // Gallery Modal Functions
+    function openModal(imageSrc) {
+        document.getElementById('imageModal').classList.add('active');
+        document.getElementById('modalImage').src = imageSrc;
+        document.body.style.overflow = 'hidden';
+    }
 
-  function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  }
+    function closeModal() {
+        document.getElementById('imageModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    // Dairy Widget Functions
+    function saveCowData() {
+        const timestamp = new Date().toLocaleString('en-IN');
+        document.getElementById('cowTime').textContent = timestamp;
+        alert('✅ Cow milk prices updated successfully!');
+    }
+
+    function saveBuffaloData() {
+        const timestamp = new Date().toLocaleString('en-IN');
+        document.getElementById('buffaloTime').textContent = timestamp;
+        alert('✅ Buffalo milk prices updated successfully!');
+    }
+
+    function backupToDrive() {
+        const cowFat = document.getElementById('cowFat').value;
+        const cowSnf = document.getElementById('cowSnf').value;
+        const buffaleFat = document.getElementById('buffaleFat').value;
+        const buffaloSnf = document.getElementById('buffaloSnf').value;
+        
+        const data = { cowFat, cowSnf, buffalofat: buffaleFat, buffaloSnf, timestamp: new Date().toISOString() };
+        console.log('Backup data:', data);
+        alert('📊 Mock backup initiated!\n\nData backed up:\n' + JSON.stringify(data, null, 2) + '\n\nIn production: Connected to Google Drive API');
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(document.getElementById('contactForm'));
+        const data = Object.fromEntries(formData);
+        
+        // Log form data
+        console.log('Contact Form Submitted:', data);
+        
+        // Show success message
+        const messageDiv = document.getElementById('formMessage');
+        messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold">✅ Thank you! Your message has been sent. The Gram Panchayat will respond within 24-48 hours.</div>';
+        
+        // Reset form
+        document.getElementById('contactForm').reset();
+        
+        // Clear message after 5 seconds
+        setTimeout(() => {
+            messageDiv.innerHTML = '';
+        }, 5000);
+    }
+
+    // Keyboard close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
 </script>
 
 </body>
