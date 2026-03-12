@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="जोवा गाँव - एक आधुनिक, ऐतिहासिक और कृषि-आधारित समुदाय। Jowa Village - Historical, Agricultural and Cultural Hub.">
     <meta name="keywords" content="Jowa, जोवा, Kareli, करेली, Narsimpur, नर्सिंहपुर, Village, गाँव, Agriculture, कृषि">
-    <meta property="og:title" content="Welcome to Jowa Village">
-    <meta property="og:description" content="Discover the rich heritage and vibrant community of Jowa Village">
+    <meta property="og:title" content="जोवा गाँव में आपका स्वागत है">
+    <meta property="og:description" content="जोवा की समृद्ध विरासत और जीवंत समुदाय को खोजें">
     <meta property="og:image" content="https://rajp7jowa.github.io/jowa/IMG-20230815-WA0047.jpg">
-    <title>Jowa Village - जोवा गाँव</title>
+    <link rel="icon" href="logo.png">
+    <title>जोवा गाँव - Jowa Village</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root { --bg: #faf6f1; --text: #2d3436; --accent: #d4a574; --hero-from: #2d5016; --hero-to: #5a3a2a; }
+        .dark { --bg: #121212; --text: #e0e0e0; --accent: #d4a574; --hero-from: #1f3410; --hero-to: #3a2920; }
         * { font-family: 'Mukta', 'Poppins', sans-serif; }
-        body { background-color: #faf6f1; color: #2d3436; }
-        .hero-gradient { background: linear-gradient(135deg, #2d5016 0%, #5a3a2a 100%); }
+        body { background-color: var(--bg); color: var(--text); transition: background-color 0.3s, color 0.3s; }
+        .hero-gradient { background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%); }
         .earth-brown { background-color: #8b6f47; }
         .forest-green { background-color: #2d5016; }
-        .accent-earth { color: #d4a574; }
+        .accent-earth { color: var(--accent); }
         .smooth-scroll { scroll-behavior: smooth; }
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 50; justify-content: center; align-items: center; }
         .modal.active { display: flex; }
@@ -43,6 +46,13 @@
         th { background-color: #2d5016; color: white; }
         tr:hover { background-color: #f9f6f3; }
         input[type="number"] { width: 80px; padding: 4px; border: 1px solid #d4a574; border-radius: 4px; }
+        /* Dark mode content fixes */
+        .dark .bg-white { background-color: #1e1e1e !important; }
+        .dark .text-gray-700 { color: #d1d5db !important; }
+        .dark .text-gray-800 { color: #e5e7eb !important; }
+        .dark .text-gray-600 { color: #cbd5e1 !important; }
+        .dark .text-gray-500 { color: #9ca3af !important; }
+        .dark .text-gray-200 { color: #a3a3a3 !important; }
     </style>
 </head>
 <body class="smooth-scroll">
@@ -50,9 +60,10 @@
 <!-- Navigation -->
 <nav class="forest-green text-white sticky top-0 z-40 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">🌾 जोवा | Jowa</h1>
-        <div class="hidden md:flex space-x-6">
-            <a href="#home" class="nav-link">होम</a>
+        <div class="flex items-center">
+            <img src="logo.png" alt="ग्राम लोगो" class="h-10 w-10 mr-3">
+            <h1 class="text-2xl font-bold">🌾 जोवा | Jowa</h1>
+        </div>
             <a href="#about" class="nav-link">इतिहास</a>
             <a href="#society" class="nav-link">समाज</a>
             <a href="#economy" class="nav-link">अर्थव्यवस्था</a>
@@ -67,10 +78,9 @@
 <!-- Hero Section -->
 <section id="home" class="hero-gradient text-white py-20 px-4">
     <div class="container mx-auto text-center">
-        <h2 class="text-5xl font-bold mb-6">Welcome to Jowa Village</h2>
-        <p class="text-2xl mb-4">स्वागत है जोवा गाँव में</p>
-        <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-8">जहाँ काली मिट्टी की समृद्धि, गोंडवाना की विरासत, और किसानों की मेहनत एक अद्भुत समुदाय का निर्माण करती है।</p>
-        <p class="text-lg italic">Where Black Soil prosperity, Gondwana heritage, and farmer's dedication create a thriving community.</p>
+        <h2 class="text-5xl font-bold mb-6"> जोवा गाँव में आपका स्वागत है</h2>
+        <p class="text-2xl mb-4">एक ऐसा गाँव जहाँ काली मिट्टी की समृद्धि, गोंडवाना की विरासत और किसानों की मेहनत मिलकर जीवन को पुष्पित करती है।</p>
+        <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-8">यहाँ वर्षों से चली आ रही हमारी खेती, धार्मिक आस्था और सामाजिक प्रगति का सुंदर संगम दिखाई देता है।</p>
     </div>
 </section>
 
@@ -80,20 +90,20 @@
         <h3 class="section-title text-forest-green">📚 इतिहास और विरासत | History & Heritage</h3>
         <div class="grid md:grid-cols-2 gap-12">
             <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">Gondwana Era (प्राचीन गोंडवाना)</h4>
-                <p class="text-gray-700 leading-relaxed">Rock paintings discovered at 'Binki Tola' near Jowa reveal this region's human settlement dating back thousands of years. In the 15th century, this entire region was part of King Sangram Shah's glorious Gondwana Empire. The foundation of our agricultural culture was laid during this era.</p>
+                <h4 class="text-xl font-bold mb-3 text-forest-green">प्राचीन गोंडवाना काल</h4>
+                <p class="text-gray-700 leading-relaxed">जोवा के पास 'बिंकी टोला' में मिले शैल चित्र दर्शाते हैं कि यह क्षेत्र हजारों साल से मानव बसाहट का केंद्र रहा है। 15वीं सदी में यह पूरा क्षेत्र राजा संग्राम शाह के गौरवशाली गोंडवाना साम्राज्य का हिस्सा था। इसी काल में हमारी कृषि संस्कृति की नींव रखी गई।</p>
             </div>
             <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">Cotton Mill Era (1904 - व्यापारिक क्रांति)</h4>
-                <p class="text-gray-700 leading-relaxed">In 1904, King Gokul Das established a major Cotton Mill in nearby Kareli city. Jowa farmers transported their cotton grown in 'black soil' via bullock carts to the mill. This historic event transformed Jowa farmers to commercial agriculture, evolving into today's sugarcane farming legacy.</p>
+                <h4 class="text-xl font-bold mb-3 text-forest-green">1904 - कपास मिल युग</h4>
+                <p class="text-gray-700 leading-relaxed">1904 में राजा गोकुल दास ने पास के करेली शहर में बड़ी कपास मिल स्थापित की। जोवा के किसान बैलगाड़ियों में काली मिट्टी में उगाया हुआ कपास मिल तक लाते थे। इस ऐतिहासिक घटना ने किसानों को वाणिज्यिक खेती की राह दिखाई, जो आज गन्ने की खेती में बदल चुकी है।</p>
             </div>
             <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">Narmada Valley Connection (नर्मदा घाटी)</h4>
-                <p class="text-gray-700 leading-relaxed">Jowa is deeply connected to the Narmada River valley's ancient and medieval civilizations. This sacred connection to 'Narmada Maiya' (Mother Narmada) remains central to village life, with rituals at the nearby sacred Barman Ghat.</p>
+                <h4 class="text-xl font-bold mb-3 text-forest-green">नर्मदा घाटी का संबंध</h4>
+                <p class="text-gray-700 leading-relaxed">जोवा का नर्मदा नदी घाटी के प्राचीन और मध्यकालीन सभ्यताओं से गहरा संबंध रहा है। 'नर्मदा मैया' की पवित्रता गाँव के जीवन का मूल स्तंभ है, और पास स्थित बरमान घाट पर अनुष्ठान आज भी मुख्य धार्मिक गतिविधि है।</p>
             </div>
             <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">Modern Era (आधुनिक समय)</h4>
-                <p class="text-gray-700 leading-relaxed">Today's Jowa represents progressive thinking, with outstanding sex ratios (1037) and child sex ratios (1471) - a testament to the progressive values championed by IAS Officer Tapasya Parihar, the village's daughter.</p>
+                <h4 class="text-xl font-bold mb-3 text-forest-green">आधुनिक युग</h4>
+                <p class="text-gray-700 leading-relaxed">आज का जोवा प्रगतिशील सोच का प्रतीक है, जहाँ उत्कृष्ट लिंगानुपात (1037) और बाल लिंगानुपात (1471) दिखाई देते हैं। यह हमारी बेटी, IAS अधिकारी तपस्या परिहार की प्रगतिशीलता का परिणाम है।</p>
             </div>
         </div>
     </div>
@@ -365,20 +375,30 @@
         const formData = new FormData(document.getElementById('contactForm'));
         const data = Object.fromEntries(formData);
         
-        // Log form data
         console.log('Contact Form Submitted:', data);
         
-        // Show success message
         const messageDiv = document.getElementById('formMessage');
-        messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold">✅ धन्यवाद! आपका संदेश भेज दिया गया है। ग्राम पंचायत 24-48 घंटे में जवाब देगी। | ✅ Thank you! Your message has been sent. Response within 24-48 hours.</div>';
+        messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold">✅ धन्यवाद! आपका संदेश भेज दिया गया है। 24-48 घंटे में आपको जवाब मिलेगा।</div>';
         
-        // Reset form
         document.getElementById('contactForm').reset();
-        
-        // Clear message after 5 seconds
         setTimeout(() => {
             messageDiv.innerHTML = '';
         }, 5000);
+    }
+
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        toggleBtn.textContent = isDark ? '☀️ लाईट मोड' : '🌙 डार्क मोड';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    // initialize theme
+    if (localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        toggleBtn.textContent = '☀️ लाईट मोड';
     }
 
     // Keyboard close modal
