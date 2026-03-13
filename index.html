@@ -1,248 +1,371 @@
 <!DOCTYPE html>
-<html lang="hi-IN">
+<html lang="hi-IN" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="जोवा गाँव - एक आधुनिक, ऐतिहासिक और कृषि-आधारित समुदाय। Jowa Village - Historical, Agricultural and Cultural Hub.">
-    <meta name="keywords" content="Jowa, जोवा, Kareli, करेली, Narsimpur, नर्सिंहपुर, Village, गाँव, Agriculture, कृषि">
+    <meta name="description" content="जोवा गाँव - एक आधुनिक, ऐतिहासिक और कृषि-आधारित समुदाय। जोवा की समृद्ध विरासत और जीवंत समुदाय को खोजें।">
+    <meta name="keywords" content="जोवा, जोबा, करेली, नर्सिंहपुर, गाँव, कृषि, ऐतिहासिक विरासत">
     <meta property="og:title" content="जोवा गाँव में आपका स्वागत है">
     <meta property="og:description" content="जोवा की समृद्ध विरासत और जीवंत समुदाय को खोजें">
-    <meta property="og:image" content="https://rajp7jowa.github.io/jowa/IMG-20230815-WA0047.jpg">
+    <meta property="og:image" content="https://rajp7jowa.github.io/jowa/logo.png">
     <link rel="icon" href="logo.png">
     <title>जोवा गाँव - Jowa Village</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #faf6f1; --text: #2d3436; --accent: #d4a574; --hero-from: #2d5016; --hero-to: #5a3a2a; }
-        .dark { --bg: #121212; --text: #e0e0e0; --accent: #d4a574; --hero-from: #1f3410; --hero-to: #3a2920; }
-        * { font-family: 'Mukta', 'Poppins', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); transition: background-color 0.3s, color 0.3s; }
-        .hero-gradient { background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 100%); }
-        .earth-brown { background-color: #8b6f47; }
-        .forest-green { background-color: #2d5016; }
-        .accent-earth { color: var(--accent); }
-        .smooth-scroll { scroll-behavior: smooth; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); z-index: 50; justify-content: center; align-items: center; }
-        .modal.active { display: flex; }
-        .modal img { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
-        .close-modal { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; font-weight: bold; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
-        .gallery-item { position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; aspect-ratio: 1; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-        .gallery-item:hover img { transform: scale(1.08); }
-        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 30px; position: relative; padding-bottom: 15px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 4px; background-color: #d4a574; border-radius: 2px; }
-        input, textarea { background-color: #fff9f5; border: 2px solid #d4a574; }
-        input:focus, textarea:focus { border-color: #2d5016; background-color: #fffbf7; }
-        .btn-primary { background-color: #2d5016; color: white; transition: all 0.3s; }
-        .btn-primary:hover { background-color: #8b6f47; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .stat-card { background: linear-gradient(135deg, #f9f6f3, #faf6f1); border-left: 4px solid #d4a574; }
-        .nav-link { transition: all 0.3s; }
-        .nav-link:hover { color: #d4a574; }
-        .timeline-item { position: relative; padding-left: 40px; }
-        .timeline-item::before { content: ''; position: absolute; left: 0; top: 0; width: 20px; height: 20px; background-color: #d4a574; border-radius: 50%; border: 3px solid #2d5016; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #d4a574; }
-        th { background-color: #2d5016; color: white; }
-        tr:hover { background-color: #f9f6f3; }
-        input[type="number"] { width: 80px; padding: 4px; border: 1px solid #d4a574; border-radius: 4px; }
-        /* Dark mode content fixes */
-        .dark .bg-white { background-color: #1e1e1e !important; }
-        .dark .text-gray-700 { color: #d1d5db !important; }
-        .dark .text-gray-800 { color: #e5e7eb !important; }
-        .dark .text-gray-600 { color: #cbd5e1 !important; }
-        .dark .text-gray-500 { color: #9ca3af !important; }
-        .dark .text-gray-200 { color: #a3a3a3 !important; }
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --accent: #d97706;
+            --card-bg: #ffffff;
+            --hero-gradient: linear-gradient(135deg, #166534 0%, #14532d 100%);
+        }
+        .dark {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent: #fbbf24;
+            --card-bg: #1e293b;
+            --hero-gradient: linear-gradient(135deg, #0f5132 0%, #064e3b 100%);
+        }
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .hero-section {
+            background: var(--hero-gradient);
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .btn-primary {
+            background-color: #166534;
+            color: white;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background-color: #14532d;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 50;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+            aspect-ratio: 1;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .dark .card {
+            background-color: var(--card-bg);
+            border: 1px solid #374151;
+        }
+        .dark .text-gray-700 { color: var(--text-secondary); }
+        .dark .text-gray-600 { color: var(--text-secondary); }
+        .dark .text-gray-500 { color: var(--text-secondary); }
+        .dark .bg-gray-50 { background-color: var(--bg-secondary); }
+        .dark .bg-white { background-color: var(--card-bg); }
+        .dark .border-gray-200 { border-color: #374151; }
     </style>
 </head>
-<body class="smooth-scroll">
+<body class="bg-gray-50 dark:bg-gray-900">
 
 <!-- Navigation -->
-<nav class="forest-green text-white sticky top-0 z-40 shadow-lg">
+<nav class="bg-green-800 text-white sticky top-0 z-40 shadow-lg transition-all duration-300">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="logo.png" alt="ग्राम लोगो" class="h-10 w-10 mr-3">
-            <h1 class="text-2xl font-bold">🌾 जोवा | Jowa</h1>
+        <div class="flex items-center space-x-3">
+            <img src="logo.png" alt="ग्राम लोगो" class="h-10 w-10">
+            <h1 class="text-2xl font-bold">🌾 जोवा गाँव</h1>
         </div>
-            <a href="#about" class="nav-link">इतिहास</a>
-            <a href="#society" class="nav-link">समाज</a>
-            <a href="#economy" class="nav-link">अर्थव्यवस्था</a>
-            <a href="#contact" class="nav-link">संपर्क</a>
+        <div class="hidden md:flex space-x-6">
+            <a href="#home" class="nav-link">घर</a>
+            <a href="#history" class="nav-link">ऐतिहासिक पृष्ठभूमि</a>
+            <a href="#society" class="nav-link">सामाजिक संरचना</a>
+            <a href="#economy" class="nav-link">आर्थिक परिदृश्य</a>
+            <a href="#contact" class="nav-link">संपर्क एवं प्रतिक्रिया</a>
             <a href="#gallery" class="nav-link">गैलरी</a>
-            <a href="feedback.html" class="nav-link accent-earth font-bold">📝 प्रतिक्रिया</a>
-            <button id="darkModeToggle" class="nav-link">🌙 डार्क मोड</button>
+            <button id="themeToggle" class="nav-link ml-4">🌙 डार्क मोड</button>
         </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-green-900 px-4 py-4">
+        <a href="#home" class="block py-2 nav-link">घर</a>
+        <a href="#history" class="block py-2 nav-link">ऐतिहासिक पृष्ठभूमि</a>
+        <a href="#society" class="block py-2 nav-link">सामाजिक संरचना</a>
+        <a href="#economy" class="block py-2 nav-link">आर्थिक परिदृश्य</a>
+        <a href="#contact" class="block py-2 nav-link">संपर्क एवं प्रतिक्रिया</a>
+        <a href="#gallery" class="block py-2 nav-link">गैलरी</a>
+        <button id="themeToggleMobile" class="block py-2 nav-link">🌙 डार्क मोड</button>
     </div>
 </nav>
 
 <!-- Hero Section -->
-<section id="home" class="hero-gradient text-white py-20 px-4">
+<section id="home" class="hero-section text-white py-20 px-4 fade-in">
     <div class="container mx-auto text-center">
-        <h2 class="text-5xl font-bold mb-6"> जोवा गाँव में आपका स्वागत है</h2>
-        <p class="text-2xl mb-4">एक ऐसा गाँव जहाँ काली मिट्टी की समृद्धि, गोंडवाना की विरासत और किसानों की मेहनत मिलकर जीवन को पुष्पित करती है।</p>
+        <h2 class="text-5xl font-bold mb-6 animate-pulse">जोवा गाँव में आपका स्वागत है</h2>
+        <p class="text-xl mb-4 max-w-3xl mx-auto">यहाँ काली मिट्टी की समृद्धि, गोंडवाना की विरासत और किसानों की मेहनत मिलकर जीवन को पुष्पित करती है।</p>
         <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-8">यहाँ वर्षों से चली आ रही हमारी खेती, धार्मिक आस्था और सामाजिक प्रगति का सुंदर संगम दिखाई देता है।</p>
+        <a href="#history" class="btn-primary inline-block">और जानें</a>
     </div>
 </section>
 
-<!-- History & Timeline Section -->
-<section id="about" class="py-20 px-4 bg-gradient-to-r from-orange-50 to-yellow-50">
+<!-- History Section -->
+<section id="history" class="py-20 px-4 bg-gray-50 dark:bg-gray-800 fade-in">
     <div class="container mx-auto">
-        <h3 class="section-title text-forest-green">📚 इतिहास और विरासत | History & Heritage</h3>
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">प्राचीन गोंडवाना काल</h4>
-                <p class="text-gray-700 leading-relaxed">जोवा के पास 'बिंकी टोला' में मिले शैल चित्र दर्शाते हैं कि यह क्षेत्र हजारों साल से मानव बसाहट का केंद्र रहा है। 15वीं सदी में यह पूरा क्षेत्र राजा संग्राम शाह के गौरवशाली गोंडवाना साम्राज्य का हिस्सा था। इसी काल में हमारी कृषि संस्कृति की नींव रखी गई।</p>
+        <h3 class="section-title text-green-800 dark:text-green-400">📚 ऐतिहासिक पृष्ठभूमि</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card p-6">
+                <h4 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">प्राचीन विरासत (शैल चित्र)</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">जोवा के निकट स्थित 'बिंकी टोला' और आसपास की गुफाओं में प्रागैतिहासिक काल के शैल चित्र पाए गए हैं। यह नर्मदा घाटी की प्राचीन सभ्यता का हिस्सा है, जो पाषाण काल से मानव उपस्थिति को दर्शाता है।</p>
             </div>
-            <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">1904 - कपास मिल युग</h4>
-                <p class="text-gray-700 leading-relaxed">1904 में राजा गोकुल दास ने पास के करेली शहर में बड़ी कपास मिल स्थापित की। जोवा के किसान बैलगाड़ियों में काली मिट्टी में उगाया हुआ कपास मिल तक लाते थे। इस ऐतिहासिक घटना ने किसानों को वाणिज्यिक खेती की राह दिखाई, जो आज गन्ने की खेती में बदल चुकी है।</p>
+            <div class="card p-6">
+                <h4 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">गोंडवाना साम्राज्य</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">15वीं-16वीं शताब्दी में यह क्षेत्र 'गोंड राजा संग्राम शाह' के 'बावन गढ़' साम्राज्य के अंतर्गत 'चौरागढ़' प्रशासनिक इकाई का हिस्सा था। यहाँ की कृषि संस्कृति में गोंडकालीन जल प्रबंधन की झलक आज भी मिलती है।</p>
             </div>
-            <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">नर्मदा घाटी का संबंध</h4>
-                <p class="text-gray-700 leading-relaxed">जोवा का नर्मदा नदी घाटी के प्राचीन और मध्यकालीन सभ्यताओं से गहरा संबंध रहा है। 'नर्मदा मैया' की पवित्रता गाँव के जीवन का मूल स्तंभ है, और पास स्थित बरमान घाट पर अनुष्ठान आज भी मुख्य धार्मिक गतिविधि है।</p>
-            </div>
-            <div class="timeline-item">
-                <h4 class="text-xl font-bold mb-3 text-forest-green">आधुनिक युग</h4>
-                <p class="text-gray-700 leading-relaxed">आज का जोवा प्रगतिशील सोच का प्रतीक है, जहाँ उत्कृष्ट लिंगानुपात (1037) और बाल लिंगानुपात (1471) दिखाई देते हैं। यह हमारी बेटी, IAS अधिकारी तपस्या परिहार की प्रगतिशीलता का परिणाम है।</p>
+            <div class="card p-6">
+                <h4 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">व्यापारिक उदय (1904)</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">बीसवीं सदी की शुरुआत में (लगभग 1904), जब 'राजा गोकुल दास' (जबलपुर के प्रसिद्ध उद्योगपति) ने क्षेत्र में व्यापारिक विस्तार किया, तब करेली और उसके समीपवर्ती गाँवों जैसे जोबा में कपास की खेती को बढ़ावा मिला। रेलवे के विस्तार ने इसे एक प्रमुख कमर्शियल हब के रूप में स्थापित किया।</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Society & Demographics Section -->
-<section id="society" class="py-20 px-4 bg-white">
+<!-- Society Section -->
+<section id="society" class="py-20 px-4 bg-white dark:bg-gray-900 fade-in">
     <div class="container mx-auto">
-        <h3 class="section-title text-forest-green">👥 Community & Demographics | समाज और जनांकिकी</h3>
-        <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="stat-card p-8 rounded-lg shadow-lg">
-                <h4 class="text-3xl font-bold text-forest-green mb-2">1037</h4>
-                <p class="text-lg text-gray-700">Female-Male Sex Ratio</p>
-                <p class="text-sm text-gray-500">महिला-पुरुष अनुपात</p>
-            </div>
-            <div class="stat-card p-8 rounded-lg shadow-lg">
-                <h4 class="text-3xl font-bold text-forest-green mb-2">1471</h4>
-                <p class="text-lg text-gray-700">Child Sex Ratio</p>
-                <p class="text-sm text-gray-500">बाल लिंगानुपात</p>
-            </div>
-            <div class="stat-card p-8 rounded-lg shadow-lg">
-                <h4 class="text-3xl font-bold text-forest-green mb-2">73%</h4>
-                <p class="text-lg text-gray-700">General & OBC Population</p>
-                <p class="text-sm text-gray-500">सामान्य व पिछड़ा वर्ग</p>
-            </div>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-400">
-                <h4 class="text-xl font-bold mb-3 text-blue-900">Scheduled Tribes (ST) - 16%</h4>
-                <p class="text-gray-700">Gond community and tribal populations - the historical original inhabitants with deep roots in agriculture and forestry.</p>
-            </div>
-            <div class="bg-green-50 p-8 rounded-lg border-l-4 border-green-400">
-                <h4 class="text-xl font-bold mb-3 text-green-900">Scheduled Castes (SC) - 11%</h4>
-                <p class="text-gray-700">Mehra and local communities vital to labor force and sugarcane processing - the backbone of our agricultural industry.</p>
-            </div>
-            <div class="bg-purple-50 p-8 rounded-lg border-l-4 border-purple-400">
-                <h4 class="text-xl font-bold mb-3 text-purple-900">Progressive Values</h4>
-                <p class="text-gray-700">IAS Officer Tapasya Parihar (2018 batch), village daughter, who refused the Kanyadaan ritual - symbol of our progressive mindset.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Economy & Agriculture Section -->
-<section id="economy" class="py-20 px-4 bg-gradient-to-r from-green-50 to-emerald-50">
-    <div class="container mx-auto">
-        <h3 class="section-title text-forest-green">💼 Economy & Agriculture | अर्थव्यवस्था और कृषि</h3>
+        <h3 class="section-title text-green-800 dark:text-green-400">👥 सामाजिक एवं धार्मिक संरचना</h3>
         <div class="grid md:grid-cols-2 gap-12 mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h4 class="text-2xl font-bold mb-4 text-forest-green">🌍 Black Cotton Soil - The Foundation</h4>
-                <p class="text-gray-700 leading-relaxed mb-4">Jowa's greatest economic strength lies in its 'heavy black soil' (काली मिट्टी). With excellent irrigation facilities, our agricultural land value ranks among the highest in Narsimpur district. This soil is ideal for sugarcane and wheat cultivation.</p>
-                <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li>Premium agricultural land valuation</li>
-                    <li>Excellent irrigation infrastructure</li>
-                    <li>High-yield cultivation potential</li>
-                </ul>
+            <div class="card p-8">
+                <h4 class="text-2xl font-bold mb-6 text-green-700 dark:text-green-300">धार्मिक आस्था</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">गाँव की आध्यात्मिक पहचान 'नर्मदा नदी' और पास के 'बरमान घाट' से जुड़ी है। यहाँ 'पोला' पर्व पर बैलों की पूजा और मकर संक्रांति पर नर्मदा स्नान की गहरी परंपरा है।</p>
             </div>
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h4 class="text-2xl font-bold mb-4 text-forest-green">🥃 Sugarcane & Gur (Jaggery) Legacy</h4>
-                <p class="text-gray-700 leading-relaxed mb-4">Proximity to Kareli's world-famous 'Gur Mandi' (Jaggery Market) drives significant investment in sugarcane farming. Despite high costs (seeds, fertilizers, labor), jaggery trade profits far exceed expenses, ensuring farmer prosperity.</p>
-                <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li>High cash crop investment</li>
-                    <li>Access to global jaggery market</li>
-                    <li>Sustained farmer income growth</li>
-                </ul>
+            <div class="card p-8">
+                <h4 class="text-2xl font-bold mb-6 text-green-700 dark:text-green-300">प्रगतिशील समाज</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">जोवा गाँव को वैश्विक पहचान यहाँ की बेटी 'तपस्या परिहार' (IAS 2018 बैच) से मिली। विवाह के दौरान 'कन्यादान' की रस्म को अस्वीकार कर उन्होंने गाँव की प्रगतिशील और आधुनिक सोच को देश के सामने रखा।</p>
             </div>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
-            <h4 class="text-2xl font-bold mb-4 text-forest-green">🐄 Dairy & Animal Husbandry - Growing Sector</h4>
-            <p class="text-gray-700 leading-relaxed mb-6">Alongside sugarcane and wheat cultivation, animal husbandry and dairy industry (cow and buffalo milk) represent an emerging and robust part of our economy. Transparent milk quality pricing (based on FAT and SNF content) has significantly boosted farmer income and economic stability.</p>
-            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                <p class="text-gray-700"><strong>Cost of Living Benefits:</strong> As a self-sufficient village, daily essentials (milk, vegetables, grains) are remarkably affordable compared to urban areas. For modern purchases and larger items, nearby Kareli city (3 km away) provides convenient access.</p>
+        <div class="card p-8">
+            <h4 class="text-2xl font-bold mb-6 text-green-700 dark:text-green-300">जनसांख्यिकी और जातिगत ढांचा</h4>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-600 mb-2">73%</div>
+                    <p class="text-gray-600 dark:text-gray-400">सामान्य एवं पिछड़ा वर्ग</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">ब्राह्मण, जैन/बनिया, पटेल/कुर्मी</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">16%</div>
+                    <p class="text-gray-600 dark:text-gray-400">अनुसूचित जनजाति</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">गोंड समुदाय</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">11%</div>
+                    <p class="text-gray-600 dark:text-gray-400">अनुसूचित जाति</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">मेहरा समाज</p>
+                </div>
+            </div>
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-pink-600 mb-2">1037</div>
+                    <p class="text-gray-600 dark:text-gray-400">लिंगानुपात</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-pink-600 mb-2">1471</div>
+                    <p class="text-gray-600 dark:text-gray-400">बाल लिंगानुपात</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Contact Us Section -->
-<section id="contact" class="py-20 px-4 bg-gradient-to-br from-forest-green to-green-900 text-white">
+<!-- Economy Section -->
+<section id="economy" class="py-20 px-4 bg-gray-50 dark:bg-gray-800 fade-in">
     <div class="container mx-auto">
-        <h3 class="section-title accent-earth">📞 हमसे संपर्क करें | Contact Us</h3>
+        <h3 class="section-title text-green-800 dark:text-green-400">💼 आर्थिक परिदृश्य</h3>
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="card p-6">
+                <h4 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">मिट्टी की विशेषता</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">जोवा में 'भारी काली मिट्टी' (Deep Black Soil) पाई जाती है, जिसे स्थानीय स्तर पर 'काबरी' या 'कनहर' मिट्टी भी कहा जाता है। यह गन्ने और गेहूं की फसल के लिए विश्व की सबसे उर्वर मिट्टियों में से एक मानी जाती है।</p>
+            </div>
+            <div class="card p-6">
+                <h4 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">करेली गुड़ मंडी</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">जोवा के किसान अपनी फसल मुख्य रूप से 'करेली गुड़ मंडी' में बेचते हैं। यहाँ का 'कचिया' गुड़ अपनी शुद्धता और स्वाद के लिए प्रसिद्ध है। गन्ने की खेती यहाँ की समृद्धि का मुख्य स्रोत है।</p>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="card p-6">
+                <h4 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">डेयरी उद्योग</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">गाँव में पशुपालन एक संगठित व्यवसाय बन चुका है। दूध की खरीदी के लिए 'FAT और SNF' आधारित पारदर्शी प्रणाली लागू है, जिससे छोटे किसानों को सीधा लाभ मिलता है।</p>
+            </div>
+            <div class="card p-6">
+                <h4 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">कनेक्टिविटी</h4>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">गाँव 'करेली शहर से मात्र 3 किमी' की दूरी पर स्थित है, जिससे इसे शहरी सुविधाओं और ग्रामीण शांति दोनों का लाभ मिलता है।</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Feedback Section -->
+<section id="contact" class="py-20 px-4 bg-white dark:bg-gray-900 fade-in">
+    <div class="container mx-auto">
+        <h3 class="section-title text-green-800 dark:text-green-400">📞 संपर्क करें एवं प्रतिक्रिया दें</h3>
         <div class="grid md:grid-cols-2 gap-12">
             <!-- Contact Form -->
-            <div>
-                <h4 class="text-2xl font-bold mb-6">📧 हमें संदेश भेजें | Send us a Message</h4>
+            <div class="card p-8">
+                <h4 class="text-2xl font-bold mb-6 text-green-700 dark:text-green-300">📧 हमें संदेश भेजें</h4>
                 <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
                     <div>
-                        <label class="block mb-2 font-semibold">आपका नाम | Your Name</label>
-                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="अपना पूरा नाम दर्ज करें">
+                        <label class="block mb-2 font-semibold">आपका नाम</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all">
                     </div>
                     <div>
-                        <label class="block mb-2 font-semibold">ईमेल | Email</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="your.email@example.com">
+                        <label class="block mb-2 font-semibold">ईमेल</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all">
                     </div>
                     <div>
-                        <label class="block mb-2 font-semibold">फोन नंबर | Phone</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="+91 XXXXX XXXXX">
+                        <label class="block mb-2 font-semibold">विषय</label>
+                        <input type="text" name="subject" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all">
                     </div>
                     <div>
-                        <label class="block mb-2 font-semibold">विषय | Subject</label>
-                        <input type="text" name="subject" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="विषय क्या है?">
+                        <label class="block mb-2 font-semibold">संदेश</label>
+                        <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all"></textarea>
                     </div>
-                    <div>
-                        <label class="block mb-2 font-semibold">संदेश | Message</label>
-                        <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-lg text-gray-800" placeholder="अपना संदेश यहाँ लिखें..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary w-full px-6 py-3 rounded-lg font-bold text-lg">संदेश भेजें 📨 | Send Message</button>
+                    <button type="submit" class="btn-primary w-full">संदेश भेजें 📨</button>
                 </form>
-                <div id="formMessage" class="mt-4 text-center"></div>
+                <div id="formMessage" class="mt-4"></div>
             </div>
 
             <!-- Contact Information -->
-            <div>
-                <h4 class="text-2xl font-bold mb-6">📍 हमसे संपर्क में रहें | Get in Touch</h4>
-                <div class="space-y-6">
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
-                        <h5 class="text-xl font-bold mb-2">📍 गाँव कार्यालय | Village Office</h5>
-                        <p class="text-gray-100">जोवा (जोबा) गाँव | Jowa (Joba) Village<br>तहसील: करेली | Taluk: Kareli<br>जिला: नर्सिंहपुर | District: Narsimpur<br>राज्य: मध्य प्रदेश | State: Madhya Pradesh</p>
+            <div class="space-y-6">
+                <div class="card p-6">
+                    <h5 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">📍 गाँव कार्यालय</h5>
+                    <p class="text-gray-700 dark:text-gray-300">जोवा (जोबा) गाँव<br>तहसील: करेली<br>जिला: नर्सिंहपुर<br>राज्य: मध्य प्रदेश</p>
+                </div>
+                <div class="card p-6">
+                    <h5 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">📞 संपर्क जानकारी</h5>
+                    <p class="text-gray-700 dark:text-gray-300">फोन: +91 XXXXX XXXXX<br>ईमेल: jowa.village@mp.gov.in</p>
+                </div>
+                <div class="card p-6">
+                    <h5 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">🕐 कार्यालय समय</h5>
+                    <p class="text-gray-700 dark:text-gray-300">सोमवार - शुक्रवार: 9:00 AM - 5:00 PM<br>शनिवार: 9:00 AM - 1:00 PM<br>रविवार: बंद</p>
+                </div>
+                <div class="card p-6">
+                    <h5 class="text-xl font-bold mb-4 text-green-700 dark:text-green-300">🌐 हमसे जुड़ें</h5>
+                    <div class="flex space-x-4 mb-3">
+                        <a href="#" class="text-2xl hover:text-green-600 transition">📱 WhatsApp</a>
+                        <a href="#" class="text-2xl hover:text-green-600 transition">👥 Facebook</a>
                     </div>
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
-                        <h5 class="text-xl font-bold mb-2">📞 संपर्क जानकारी | Contact Info</h5>
-                        <p class="text-gray-100">फोन | Phone: +91 XXXXX XXXXX<br>ईमेल | Email: jowa.village@mp.gov.in</p>
-                    </div>
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
-                        <h5 class="text-xl font-bold mb-2">🚇 नजदीकी स्थान | Nearby Landmarks</h5>
-                        <p class="text-gray-100">📍 करेली रेलवे स्टेशन (3 किमी) | Kareli Railway Station<br>📍 बरमान घाट (2 किमी) - पवित्र स्थान | Barman Ghat - Sacred Site<br>📍 करेली गुड़ मंडी (4 किमी) | Kareli Gur Mandi</p>
-                    </div>
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
-                        <h5 class="text-xl font-bold mb-2">🕐 कार्यालय समय | Office Hours</h5>
-                        <p class="text-gray-100">सोमवार - शुक्रवार | Mon - Fri: 9:00 AM - 5:00 PM<br>शनिवार | Saturday: 9:00 AM - 1:00 PM<br>रविवार | Sunday: बंद | Closed</p>
-                    </div>
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur">
-                        <h5 class="text-xl font-bold mb-2">🌐 हमसे जुड़ें | Connect With Us</h5>
-                        <div class="flex space-x-4 mb-3">
-                            <a href="#" class="text-2xl hover:text-yellow-300 transition">📱 WhatsApp</a>
-                            <a href="#" class="text-2xl hover:text-yellow-300 transition">👥 Facebook</a>
-                        </div>
-                        <p class="text-sm text-gray-200">गाँव की नई जानकारी के लिए हमें फॉलो करें | Follow for village updates</p>
-                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">गाँव की नई जानकारी के लिए हमें फॉलो करें</p>
                 </div>
             </div>
         </div>
@@ -250,96 +373,95 @@
 </section>
 
 <!-- Gallery Section -->
-<section id="gallery" class="py-20 px-4 bg-white">
+<section id="gallery" class="py-20 px-4 bg-gray-50 dark:bg-gray-800 fade-in">
     <div class="container mx-auto">
-        <h3 class="section-title text-forest-green">🇮🇳 77वें स्वतंत्रता दिवस की 76वर्षगांठ | Independence Day 2023 Gallery</h3>
-        <div class="mb-12 max-w-4xl mx-auto">
-            <p class="text-lg leading-relaxed mb-6">77वें स्वतंत्रता दिवस की 76वर्षगांठ की कुछ झलकियाँ, जिनमें बच्चों की सक्रिय भागीदारी और पूर्व जिला अध्यक्ष देवकुआर बाई द्वारा आवार्ड से सम्मानित किए जाने का समर्पण है। इस उत्सव की सुंदरता को छवियाँ साझा करती हैं।</p>
-            <p class="text-lg leading-relaxed italic text-gray-700">Glimpses of celebrating India's 77th Independence Day with the active participation of children and the honor of being felicitated by former District President Devkuar Bai. These images beautifully capture the essence of our festival.</p>
+        <h3 class="section-title text-green-800 dark:text-green-400">🇮🇳 स्वतंत्रता दिवस गैलरी</h3>
+        <div class="mb-12 max-w-4xl mx-auto text-center">
+            <p class="text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300">77वें स्वतंत्रता दिवस की 76वर्षगांठ की कुछ झलकियाँ, जिनमें बच्चों की सक्रिय भागीदारी और पूर्व जिला अध्यक्ष देवकुआर बाई द्वारा आवार्ड से सम्मानित किए जाने का समर्पण है।</p>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0011.jpg')"><img src="IMG-20230815-WA0011.jpg" alt="Independence Day Image 1"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0012.jpg')"><img src="IMG-20230815-WA0012.jpg" alt="Independence Day Image 2"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0013.jpg')"><img src="IMG-20230815-WA0013.jpg" alt="Independence Day Image 3"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0014.jpg')"><img src="IMG-20230815-WA0014.jpg" alt="Independence Day Image 4"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0015.jpg')"><img src="IMG-20230815-WA0015.jpg" alt="Independence Day Image 5"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0016.jpg')"><img src="IMG-20230815-WA0016.jpg" alt="Independence Day Image 6"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0017.jpg')"><img src="IMG-20230815-WA0017.jpg" alt="Independence Day Image 7"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0018.jpg')"><img src="IMG-20230815-WA0018.jpg" alt="Independence Day Image 8"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0019.jpg')"><img src="IMG-20230815-WA0019.jpg" alt="Independence Day Image 9"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0020.jpg')"><img src="IMG-20230815-WA0020.jpg" alt="Independence Day Image 10"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0021.jpg')"><img src="IMG-20230815-WA0021.jpg" alt="Independence Day Image 11"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0022.jpg')"><img src="IMG-20230815-WA0022.jpg" alt="Independence Day Image 12"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0023.jpg')"><img src="IMG-20230815-WA0023.jpg" alt="Independence Day Image 13"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0024.jpg')"><img src="IMG-20230815-WA0024.jpg" alt="Independence Day Image 14"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0025.jpg')"><img src="IMG-20230815-WA0025.jpg" alt="Independence Day Image 15"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0026.jpg')"><img src="IMG-20230815-WA0026.jpg" alt="Independence Day Image 16"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0027.jpg')"><img src="IMG-20230815-WA0027.jpg" alt="Independence Day Image 17"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0028.jpg')"><img src="IMG-20230815-WA0028.jpg" alt="Independence Day Image 18"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0029.jpg')"><img src="IMG-20230815-WA0029.jpg" alt="Independence Day Image 19"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0030.jpg')"><img src="IMG-20230815-WA0030.jpg" alt="Independence Day Image 20"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0031.jpg')"><img src="IMG-20230815-WA0031.jpg" alt="Independence Day Image 21"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0032.jpg')"><img src="IMG-20230815-WA0032.jpg" alt="Independence Day Image 22"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0033.jpg')"><img src="IMG-20230815-WA0033.jpg" alt="Independence Day Image 23"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0034.jpg')"><img src="IMG-20230815-WA0034.jpg" alt="Independence Day Image 24"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0035.jpg')"><img src="IMG-20230815-WA0035.jpg" alt="Independence Day Image 25"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0036.jpg')"><img src="IMG-20230815-WA0036.jpg" alt="Independence Day Image 26"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0037.jpg')"><img src="IMG-20230815-WA0037.jpg" alt="Independence Day Image 27"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0038.jpg')"><img src="IMG-20230815-WA0038.jpg" alt="Independence Day Image 28"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0039.jpg')"><img src="IMG-20230815-WA0039.jpg" alt="Independence Day Image 29"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0040.jpg')"><img src="IMG-20230815-WA0040.jpg" alt="Independence Day Image 30"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0041.jpg')"><img src="IMG-20230815-WA0041.jpg" alt="Independence Day Image 31"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0042.jpg')"><img src="IMG-20230815-WA0042.jpg" alt="Independence Day Image 32"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0043.jpg')"><img src="IMG-20230815-WA0043.jpg" alt="Independence Day Image 33"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0044.jpg')"><img src="IMG-20230815-WA0044.jpg" alt="Independence Day Image 34"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0045.jpg')"><img src="IMG-20230815-WA0045.jpg" alt="Independence Day Image 35"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0046.jpg')"><img src="IMG-20230815-WA0046.jpg" alt="Independence Day Image 36"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0047.jpg')"><img src="IMG-20230815-WA0047.jpg" alt="Independence Day Image 37"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0048.jpg')"><img src="IMG-20230815-WA0048.jpg" alt="Independence Day Image 38"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0049.jpg')"><img src="IMG-20230815-WA0049.jpg" alt="Independence Day Image 39"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0050.jpg')"><img src="IMG-20230815-WA0050.jpg" alt="Independence Day Image 40"></div>
-            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0051.jpg')"><img src="IMG-20230815-WA0051.jpg" alt="Independence Day Image 41"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0011.jpg')"><img src="IMG-20230815-WA0011.jpg" alt="स्वतंत्रता दिवस छवि 1"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0012.jpg')"><img src="IMG-20230815-WA0012.jpg" alt="स्वतंत्रता दिवस छवि 2"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0013.jpg')"><img src="IMG-20230815-WA0013.jpg" alt="स्वतंत्रता दिवस छवि 3"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0014.jpg')"><img src="IMG-20230815-WA0014.jpg" alt="स्वतंत्रता दिवस छवि 4"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0015.jpg')"><img src="IMG-20230815-WA0015.jpg" alt="स्वतंत्रता दिवस छवि 5"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0016.jpg')"><img src="IMG-20230815-WA0016.jpg" alt="स्वतंत्रता दिवस छवि 6"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0017.jpg')"><img src="IMG-20230815-WA0017.jpg" alt="स्वतंत्रता दिवस छवि 7"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0018.jpg')"><img src="IMG-20230815-WA0018.jpg" alt="स्वतंत्रता दिवस छवि 8"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0019.jpg')"><img src="IMG-20230815-WA0019.jpg" alt="स्वतंत्रता दिवस छवि 9"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0020.jpg')"><img src="IMG-20230815-WA0020.jpg" alt="स्वतंत्रता दिवस छवि 10"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0021.jpg')"><img src="IMG-20230815-WA0021.jpg" alt="स्वतंत्रता दिवस छवि 11"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0022.jpg')"><img src="IMG-20230815-WA0022.jpg" alt="स्वतंत्रता दिवस छवि 12"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0023.jpg')"><img src="IMG-20230815-WA0023.jpg" alt="स्वतंत्रता दिवस छवि 13"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0024.jpg')"><img src="IMG-20230815-WA0024.jpg" alt="स्वतंत्रता दिवस छवि 14"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0025.jpg')"><img src="IMG-20230815-WA0025.jpg" alt="स्वतंत्रता दिवस छवि 15"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0026.jpg')"><img src="IMG-20230815-WA0026.jpg" alt="स्वतंत्रता दिवस छवि 16"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0027.jpg')"><img src="IMG-20230815-WA0027.jpg" alt="स्वतंत्रता दिवस छवि 17"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0028.jpg')"><img src="IMG-20230815-WA0028.jpg" alt="स्वतंत्रता दिवस छवि 18"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0029.jpg')"><img src="IMG-20230815-WA0029.jpg" alt="स्वतंत्रता दिवस छवि 19"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0030.jpg')"><img src="IMG-20230815-WA0030.jpg" alt="स्वतंत्रता दिवस छवि 20"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0031.jpg')"><img src="IMG-20230815-WA0031.jpg" alt="स्वतंत्रता दिवस छवि 21"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0032.jpg')"><img src="IMG-20230815-WA0032.jpg" alt="स्वतंत्रता दिवस छवि 22"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0033.jpg')"><img src="IMG-20230815-WA0033.jpg" alt="स्वतंत्रता दिवस छवि 23"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0034.jpg')"><img src="IMG-20230815-WA0034.jpg" alt="स्वतंत्रता दिवस छवि 24"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0035.jpg')"><img src="IMG-20230815-WA0035.jpg" alt="स्वतंत्रता दिवस छवि 25"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0036.jpg')"><img src="IMG-20230815-WA0036.jpg" alt="स्वतंत्रता दिवस छवि 26"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0037.jpg')"><img src="IMG-20230815-WA0037.jpg" alt="स्वतंत्रता दिवस छवि 27"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0038.jpg')"><img src="IMG-20230815-WA0038.jpg" alt="स्वतंत्रता दिवस छवि 28"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0039.jpg')"><img src="IMG-20230815-WA0039.jpg" alt="स्वतंत्रता दिवस छवि 29"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0040.jpg')"><img src="IMG-20230815-WA0040.jpg" alt="स्वतंत्रता दिवस छवि 30"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0041.jpg')"><img src="IMG-20230815-WA0041.jpg" alt="स्वतंत्रता दिवस छवि 31"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0042.jpg')"><img src="IMG-20230815-WA0042.jpg" alt="स्वतंत्रता दिवस छवि 32"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0043.jpg')"><img src="IMG-20230815-WA0043.jpg" alt="स्वतंत्रता दिवस छवि 33"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0044.jpg')"><img src="IMG-20230815-WA0044.jpg" alt="स्वतंत्रता दिवस छवि 34"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0045.jpg')"><img src="IMG-20230815-WA0045.jpg" alt="स्वतंत्रता दिवस छवि 35"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0046.jpg')"><img src="IMG-20230815-WA0046.jpg" alt="स्वतंत्रता दिवस छवि 36"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0047.jpg')"><img src="IMG-20230815-WA0047.jpg" alt="स्वतंत्रता दिवस छवि 37"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0048.jpg')"><img src="IMG-20230815-WA0048.jpg" alt="स्वतंत्रता दिवस छवि 38"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0049.jpg')"><img src="IMG-20230815-WA0049.jpg" alt="स्वतंत्रता दिवस छवि 39"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0050.jpg')"><img src="IMG-20230815-WA0050.jpg" alt="स्वतंत्रता दिवस छवि 40"></div>
+            <div class="gallery-item" onclick="openModal('IMG-20230815-WA0051.jpg')"><img src="IMG-20230815-WA0051.jpg" alt="स्वतंत्रता दिवस छवि 41"></div>
         </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="forest-green text-white py-12 px-4">
+<footer class="bg-green-800 text-white py-12 px-4">
     <div class="container mx-auto">
         <div class="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-                <h5 class="font-bold mb-4">🌾 Jowa Village</h5>
-                <p class="text-gray-200 text-sm">Preserving heritage, building futures through agriculture and community values.</p>
+                <h5 class="font-bold mb-4">🌾 जोवा गाँव</h5>
+                <p class="text-gray-200 text-sm">विरासत को संरक्षित करते हुए, कृषि और समुदाय मूल्यों के माध्यम से भविष्य का निर्माण।</p>
             </div>
             <div>
-                <h5 class="font-bold mb-4">Quick Links</h5>
+                <h5 class="font-bold mb-4">त्वरित लिंक</h5>
                 <ul class="text-gray-200 text-sm space-y-2">
-                    <li><a href="#home" class="hover:accent-earth">Home</a></li>
-                    <li><a href="#about" class="hover:accent-earth">History</a></li>
-                    <li><a href="#contact" class="hover:accent-earth">Contact</a></li>
+                    <li><a href="#home" class="hover:text-yellow-300 transition">घर</a></li>
+                    <li><a href="#history" class="hover:text-yellow-300 transition">ऐतिहासिक पृष्ठभूमि</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-300 transition">संपर्क</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-4">Important Places</h5>
+                <h5 class="font-bold mb-4">महत्वपूर्ण स्थान</h5>
                 <ul class="text-gray-200 text-sm space-y-2">
-                    <li>📍 Kareli Railway Station</li>
-                    <li>📍 Barman Ghat (Sacred Site)</li>
-                    <li>📍 Kareli Gur Mandi</li>
+                    <li>📍 करेली रेलवे स्टेशन</li>
+                    <li>📍 बरमान घाट (पवित्र स्थान)</li>
+                    <li>📍 करेली गुड़ मंडी</li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-4">Quick Facts</h5>
+                <h5 class="font-bold mb-4">त्वरित तथ्य</h5>
                 <ul class="text-gray-200 text-sm space-y-2">
-                    <li>Sex Ratio: 1037</li>
-                    <li>Child Ratio: 1471</li>
-                    <li>Founded: Gondwana Era</li>
+                    <li>लिंगानुपात: 1037</li>
+                    <li>बाल लिंगानुपात: 1471</li>
+                    <li>स्थापित: गोंडवाना काल</li>
                 </ul>
             </div>
         </div>
         <hr class="border-green-700 mb-6">
         <div class="text-center text-gray-300 text-sm">
-            <p>&copy; 2026 Jowa Village, Kareli, Narsimpur, Madhya Pradesh. All rights reserved.</p>
-            <p class="mt-2">Built with ❤️ for our community | Designed for responsive mobile-first experience</p>
+            <p>&copy; 2026 जोवा गाँव, करेली, नर्सिंहपुर, मध्य प्रदेश। सभी अधिकार सुरक्षित।</p>
+            <p class="mt-2">हमारे समुदाय के लिए ❤️ के साथ निर्मित | मोबाइल-प्रथम प्रतिक्रियाशील अनुभव के लिए डिज़ाइन किया गया</p>
         </div>
     </div>
 </footer>
@@ -347,11 +469,43 @@
 <!-- Image Modal -->
 <div id="imageModal" class="modal">
     <span class="close-modal" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="Gallery Image">
+    <img id="modalImage" src="" alt="गैलरी छवि">
 </div>
 
 <!-- JavaScript -->
 <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    const html = document.documentElement;
+
+    function toggleTheme() {
+        html.classList.toggle('dark');
+        const isDark = html.classList.contains('dark');
+        themeToggle.textContent = isDark ? '☀️ लाईट मोड' : '🌙 डार्क मोड';
+        themeToggleMobile.textContent = isDark ? '☀️ लाईट मोड' : '🌙 डार्क मोड';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
+
+    // Initialize theme
+    if (localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        themeToggle.textContent = '☀️ लाईट मोड';
+        themeToggleMobile.textContent = '☀️ लाईट मोड';
+    }
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
     // Gallery Modal Functions
     function openModal(imageSrc) {
         document.getElementById('imageModal').classList.add('active');
@@ -375,10 +529,10 @@
         const formData = new FormData(document.getElementById('contactForm'));
         const data = Object.fromEntries(formData);
         
-        console.log('Contact Form Submitted:', data);
+        console.log('संपर्क फॉर्म सबमिट:', data);
         
         const messageDiv = document.getElementById('formMessage');
-        messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold">✅ धन्यवाद! आपका संदेश भेज दिया गया है। 24-48 घंटे में आपको जवाब मिलेगा।</div>';
+        messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold dark:bg-green-800 dark:text-green-200">✅ धन्यवाद! आपका संदेश भेज दिया गया है। 24-48 घंटे में आपको जवाब मिलेगा।</div>';
         
         document.getElementById('contactForm').reset();
         setTimeout(() => {
@@ -386,20 +540,23 @@
         }, 5000);
     }
 
-    // Dark mode toggle
-    const toggleBtn = document.getElementById('darkModeToggle');
-    toggleBtn.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-        const isDark = document.documentElement.classList.contains('dark');
-        toggleBtn.textContent = isDark ? '☀️ लाईट मोड' : '🌙 डार्क मोड';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    // Scroll Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
     });
-    // initialize theme
-    if (localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-        toggleBtn.textContent = '☀️ लाईट मोड';
-    }
 
     // Keyboard close modal
     document.addEventListener('keydown', function(e) {
@@ -409,5 +566,3 @@
 
 </body>
 </html>
-
-  
