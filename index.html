@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="जोवा गाँव - एक आधुनिक, ऐतिहासिक और कृषि-आधारित समुदाय। जोवा की समृद्ध विरासत और जीवंत समुदाय को खोजें।">
-    <meta name="keywords" content="जोवा, जोबा, करेली, नर्सिंहपुर, गाँव, कृषि, ऐतिहासिक विरासत">
-    <meta property="og:title" content="जोवा गाँव में आपका स्वागत है">
-    <meta property="og:description" content="जोवा की समृद्ध विरासत और जीवंत समुदाय को खोजें">
+    <meta name="description" content="जोवा गाँव - मध्य प्रदेश का ऐतिहासिक और कृषि प्रधान गाँव, स्थानीय संस्कृति, आर्थिक पहल, डेयरी और संपर्क विवरण के साथ विस्तृत जानकारी।">
+    <meta name="keywords" content="जोवा, जोबा, करेली, नर्सिंहपुर, गाव, कृषि, ऐतिहासिक धरोहर, डेयरी, ग्रामीण विकास">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="RajP7Jowa">
+    <link rel="canonical" href="https://rajp7jowa.github.io/jowa/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="जोवा गाँव - आधुनिक ग्रामीण विकास और ऐतिहासिक विरासत">
+    <meta property="og:description" content="जोवा की समृद्ध विरासत, सामाजिक संरचना, आर्थिक परिदृश्य और स्थानीय संपर्क जानकारी देखें।">
     <meta property="og:image" content="https://rajp7jowa.github.io/jowa/favicon.png">
+    <meta property="og:url" content="https://rajp7jowa.github.io/jowa/">
+    <meta property="og:site_name" content="जोवा गाँव">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="जोवा गाँव - आधुनिक ग्रामीण विकास और ऐतिहासिक विरासत">
+    <meta name="twitter:description" content="जोवा की समृद्ध विरासत, सामाजिक संरचना, आर्थिक परिदृश्य और स्थानीय संपर्क जानकारी देखें।">
+    <meta name="twitter:image" content="https://rajp7jowa.github.io/jowa/favicon.png">
     <link rel="icon" href="favicon.png">
     <title>जोवा गाँव - Jowa Village</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #fafafa;
-            --bg-secondary: #f1f5f9;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --accent: #d97706;
+            --bg-primary: #f4f7fb;
+            --bg-secondary: #eef3f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #0b6cfd;
+            --accent-soft: rgba(11, 108, 253, 0.12);
             --card-bg: #ffffff;
-            --hero-gradient: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.18);
+            --hero-gradient: linear-gradient(135deg, #e6f2ff 0%, #f8fbff 100%);
+            --glass-bg: rgba(255, 255, 255, 0.42);
+            --glass-border: rgba(203, 213, 225, 0.35);
+            --surface: #ffffff;
+            --radius: 16px;
         }
         .dark {
             --bg-primary: #1a1a1a;
@@ -53,15 +66,43 @@
             transition: background-color 0.5s ease, color 0.5s ease;
         }
         .hero-section {
-            background: var(--hero-gradient);
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.4)), var(--hero-gradient);
+            color: #0f172a;
+            min-height: 72vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            color: #0f172a;
+        }
+        .dark .hero-section {
+            color: #f8fafc;
         }
         .card {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 45px rgba(15, 23, 42, 0.2);
+        }
+        .btn-primary {
+            border: 1px solid rgba(11, 108, 253, 0.3);
+            background: linear-gradient(90deg, #0b71fb, #2f8dff);
+            color: white;
+            box-shadow: 0 10px 20px rgba(11, 108, 253, 0.2);
+            transition: all 0.25s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #0a5cdb, #2275e5);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(11, 108, 253, 0.28);
         }
         .card:hover {
             transform: translateY(-8px);
@@ -130,18 +171,20 @@
             transform: scale(1.2);
         }
         .section-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 2vw, 2.4rem);
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            color: var(--text-primary);
         }
         .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
-            width: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 72px;
             height: 4px;
             background-color: var(--accent);
             border-radius: 2px;
@@ -256,6 +299,20 @@
         .dark .bg-white { background-color: var(--card-bg); }
         .dark .border-gray-200 { border-color: #374151; }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "जोवा गाँव",
+      "url": "https://rajp7jowa.github.io/jowa/",
+      "description": "जोवा गाँव की कृषि, इतिहास और समाज पर केंद्रित वेबसाइट",
+      "publisher": {
+        "@type": "Organization",
+        "name": "जोवा गाँव",
+        "url": "https://rajp7jowa.github.io/jowa/"
+      }
+    }
+    </script>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
 
@@ -296,16 +353,12 @@
 </header>
 
 <!-- Hero Section -->
-<section id="home" class="hero-section text-gray-800 dark:text-white py-32 px-4 fade-in-up">
+<section id="home" class="hero-section text-gray-800 dark:text-white py-32 px-4">
     <div class="container mx-auto text-center">
         <img src="favicon.png" alt="जोवा लोगो" class="h-24 w-24 mx-auto mb-8 rounded-full shadow-lg">
         <h1 class="text-6xl font-bold mb-6 title-font">जोवा गाँव</h1>
         <p class="text-2xl mb-4 body-font">आपका स्वागत है इस ऐतिहासिक और कृषि प्रधान समुदाय में</p>
         <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-8 body-font">जहाँ काली मिट्टी की समृद्धि, गोंडवाना की विरासत और किसानों की मेहनत मिलकर जीवन को पुष्पित करती है।</p>
-        <div class="flex justify-center space-x-6 mt-8">
-            <a href="https://youtube.com/@p7jowa" class="social-icon text-3xl">📺</a>
-            <a href="https://facebook.com/P7Jowa" class="social-icon text-3xl">📘</a>
-        </div>
 <!-- History Section -->
 <section id="history" class="py-20 px-4 bg-gray-50 dark:bg-gray-800 fade-in-up">
     <div class="container mx-auto">
@@ -460,9 +513,8 @@
                 </div>
                 <div class="card p-6">
                     <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">🌐 हमसे जुड़ें</h3>
-                    <div class="flex justify-center space-x-6">
-                        <a href="https://youtube.com/@p7jowa" class="social-icon text-3xl">📺</a>
-                        <a href="https://facebook.com/P7Jowa" class="social-icon text-3xl">📘</a>
+                    <div class="flex justify-center">
+                        <a href="https://www.youtube.com/@p7jowa" class="social-icon text-3xl" target="_blank" rel="noopener">📺</a>
                     </div>
                 </div>
             </div>
@@ -542,8 +594,8 @@
     }
 
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.01,
+        rootMargin: '0px 0px -20px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -560,6 +612,9 @@
     document.querySelectorAll('section .section-title').forEach(el => {
         observer.observe(el);
     });
+
+    // ensure top hero section is visible immediately
+    document.getElementById('home')?.classList.add('visible');
 
     // Close mobile menu after clicking a navlink
     document.querySelectorAll('#mobileMenu a').forEach(link => {
