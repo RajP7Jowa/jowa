@@ -44,6 +44,9 @@
         * {
             font-family: 'Noto Sans Devanagari', sans-serif;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             background-color: var(--bg-primary);
             color: var(--text-primary);
@@ -71,10 +74,19 @@
         }
         .fade-in-up {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(30px) scale(0.98);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
         .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .section-title {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .section-title.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -160,6 +172,13 @@
         .nav-link {
             transition: all 0.3s ease;
             position: relative;
+            color: var(--text-primary);
+        }
+        .dark .nav-link {
+            color: var(--text-primary);
+        }
+        .nav-link:hover {
+            color: var(--accent);
         }
         .nav-link::after {
             content: '';
@@ -241,53 +260,41 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
 
-<!-- Desktop Floating Navigation -->
-<div class="hidden md:block floating-nav">
-    <div class="glass-nav rounded-2xl p-6 shadow-2xl">
-        <div class="flex items-center space-x-6">
-            <img src="favicon.png" alt="जोवा लोगो" class="h-12 w-12 rounded-full">
-            <nav class="flex space-x-8">
-                <a href="#home" class="nav-link text-lg font-semibold hover:text-accent transition">मुख्य</a>
-                <a href="#history" class="nav-link text-lg font-semibold hover:text-accent transition">ऐतिहासिक</a>
-                <a href="#society" class="nav-link text-lg font-semibold hover:text-accent transition">समाज</a>
-                <a href="#economy" class="nav-link text-lg font-semibold hover:text-accent transition">अर्थव्यवस्था</a>
-                <a href="#dairy" class="nav-link text-lg font-semibold hover:text-accent transition">डेयरी</a>
-                <a href="#contact" class="nav-link text-lg font-semibold hover:text-accent transition">संपर्क</a>
-                <button id="themeToggle" class="nav-link text-lg font-semibold">🌙 डार्क</button>
-            </nav>
+<!-- Site Navigation -->
+<header class="site-nav sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white/75 dark:bg-gray-900/80 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3 font-bold text-lg text-gray-800 dark:text-gray-100">
+            <img src="favicon.png" alt="जोवा लोगो" class="h-10 w-10 rounded-full shadow" />
+            <span class="title-font">जोवा गाँव</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6">
+            <a href="#home" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-100">मुख्य</a>
+            <a href="#history" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-100">ऐतिहासिक</a>
+            <a href="#society" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-100">समाज</a>
+            <a href="#economy" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-100">अर्थव्यवस्था</a>
+            <a href="#dairy" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-100">डेयरी</a>
+            <a href="#contact" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-100">संपर्क</a>
+            <button id="themeToggle" class="nav-link text-sm font-semibold text-gray-700 dark:text-gray-100 px-3 py-1 rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition">🌙 डार्क</button>
+        </nav>
+
+        <button id="mobileMenuBtn" type="button" class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
+            ☰
+        </button>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <div class="flex flex-col px-4 py-3 space-y-2">
+            <a href="#home" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">🏠 मुख्य</a>
+            <a href="#history" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">📚 ऐतिहासिक</a>
+            <a href="#society" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">👥 समाज</a>
+            <a href="#economy" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">💼 अर्थव्यवस्था</a>
+            <a href="#dairy" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">🥛 डेयरी</a>
+            <a href="#contact" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">📞 संपर्क</a>
+            <button id="themeToggleMobile" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 text-left">🌙 डार्क मोड</button>
         </div>
     </div>
-</div>
-
-<!-- Mobile Bottom Navigation -->
-<div class="md:hidden bottom-nav">
-    <div class="flex justify-around py-3">
-        <a href="#home" class="flex flex-col items-center py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            <span class="text-2xl">🏠</span>
-            <span class="text-xs mt-1">मुख्य</span>
-        </a>
-        <a href="#history" class="flex flex-col items-center py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            <span class="text-2xl">📚</span>
-            <span class="text-xs mt-1">ऐतिहासिक</span>
-        </a>
-        <a href="#society" class="flex flex-col items-center py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            <span class="text-2xl">👥</span>
-            <span class="text-xs mt-1">समाज</span>
-        </a>
-        <a href="#economy" class="flex flex-col items-center py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            <span class="text-2xl">💼</span>
-            <span class="text-xs mt-1">अर्थव्यवस्था</span>
-        </a>
-        <a href="#dairy" class="flex flex-col items-center py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            <span class="text-2xl">🥛</span>
-            <span class="text-xs mt-1">डेयरी</span>
-        </a>
-        <a href="#contact" class="flex flex-col items-center py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            <span class="text-2xl">📞</span>
-            <span class="text-xs mt-1">संपर्क</span>
-        </a>
-    </div>
-</div>
+</header>
 
 <!-- Hero Section -->
 <section id="home" class="hero-section text-gray-800 dark:text-white py-32 px-4 fade-in-up">
@@ -480,76 +487,61 @@
 
 <!-- JavaScript -->
 <script>
-    // Theme Toggle
+    const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
     const themeToggleMobile = document.getElementById('themeToggleMobile');
-    const html = document.documentElement;
 
-    function toggleTheme() {
-        html.classList.toggle('dark');
-        const isDark = html.classList.contains('dark');
-        themeToggle.textContent = isDark ? '☀️ लाईट मोड' : '🌙 डार्क मोड';
-        themeToggleMobile.textContent = isDark ? '☀️ लाईट मोड' : '🌙 डार्क मोड';
+    function setTheme(isDark) {
+        if (isDark) {
+            html.classList.add('dark');
+            if (themeToggle) themeToggle.textContent = '☀️ लाईट मोड';
+            if (themeToggleMobile) themeToggleMobile.textContent = '☀️ लाईट मोड';
+        } else {
+            html.classList.remove('dark');
+            if (themeToggle) themeToggle.textContent = '🌙 डार्क मोड';
+            if (themeToggleMobile) themeToggleMobile.textContent = '🌙 डार्क मोड';
+        }
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
 
-    themeToggle.addEventListener('click', toggleTheme);
-    themeToggleMobile.addEventListener('click', toggleTheme);
-
-    // Initialize theme
-    if (localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        html.classList.add('dark');
-        themeToggle.textContent = '☀️ लाईट मोड';
-        themeToggleMobile.textContent = '☀️ लाईट मोड';
+    function toggleTheme() {
+        setTheme(!html.classList.contains('dark'));
     }
 
-    // Mobile Menu
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggleMobile) themeToggleMobile.addEventListener('click', () => {
+        toggleTheme();
+        document.getElementById('mobileMenu')?.classList.add('hidden');
     });
 
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
+    const themeStorage = localStorage.getItem('theme');
+    const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(themeStorage === 'dark' || (!themeStorage && preferDark));
 
-    function toggleTheme() {
-        html.classList.toggle('dark');
-        const isDark = html.classList.contains('dark');
-        themeToggle.textContent = isDark ? '☀️ लाईट' : '🌙 डार्क';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
     }
 
-    themeToggle.addEventListener('click', toggleTheme);
-
-    // Initialize theme
-    if (localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        html.classList.add('dark');
-        themeToggle.textContent = '☀️ लाईट';
-    }
-
-    // Contact Form Handler
     function handleContactSubmit(e) {
         e.preventDefault();
         const formData = new FormData(document.getElementById('contactForm'));
         const data = Object.fromEntries(formData);
-        
+
         console.log('संपर्क फॉर्म सबमिट:', data);
-        
+
         const messageDiv = document.getElementById('formMessage');
-        messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold dark:bg-green-800 dark:text-green-200 body-font">✅ धन्यवाद! आपका संदेश भेज दिया गया है। 24-48 घंटे में आपको जवाब मिलेगा।</div>';
-        
-        document.getElementById('contactForm').reset();
-        setTimeout(() => {
-            messageDiv.innerHTML = '';
-        }, 5000);
+        if (messageDiv) {
+            messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold dark:bg-green-800 dark:text-green-200 body-font">✅ धन्यवाद! आपका संदेश भेज दिया गया है। 24-48 घंटे में आपको जवाब मिलेगा।</div>';
+            setTimeout(() => { messageDiv.innerHTML = ''; }, 5000);
+        }
+
+        document.getElementById('contactForm')?.reset();
     }
 
-    // Scroll Animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -565,6 +557,16 @@
 
     document.querySelectorAll('.fade-in-up').forEach(el => {
         observer.observe(el);
+    });
+    document.querySelectorAll('section .section-title').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Close mobile menu after clicking a navlink
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobileMenu')?.classList.add('hidden');
+        });
     });
 </script>
 
