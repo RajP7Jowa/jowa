@@ -383,65 +383,67 @@
     <div class="container mx-auto max-w-6xl">
         <h2 class="section-title text-center text-4xl font-bold mb-4 title-font text-gray-800 dark:text-white">🖼️ 16:9 रेज़ोल्यूशन कार्यक्रम गैलरी</h2>
         <p class="text-center text-gray-600 dark:text-gray-400 mb-10 body-font">सभी चित्र 16:9 अनुपात में सेट हैं। ज़ूम करने के लिए किसी भी फ़ोटो पर क्लिक करें।</p>
-   <!-- 16:9 Grid Layout -->
-        <div class="grid-16-9">
-            
-            <!-- 1. School Building & Ground (Brought to the Very Top) -->
-            <div class="item-16-9 span-2-col" onclick="openModal('1000088696.jpg')">
-                <img src="1000088696.jpg" alt="गाँव विद्यालय भवन एवं 15 अगस्त स्वतंत्रता दिवस प्रांगण" onerror="this.src='1000088370.jpg'">
-                <div class="overlay-16-9">🏫 एकीकृत शासकीय नवीन माध्यमिक शाला जोवा - स्वतंत्रता दिवस प्रांगण</div>
-            </div>
 
-            <!-- 2. Girls Welcome Song Photo -->
-            <div class="item-16-9" onclick="openModal('1000088701.jpg')">
-                <img src="1000088701.jpg" alt="सर्वधर्म प्रार्थना एवं अभिनंदन गीत" onerror="this.src='1000088377.jpg'">
-                <div class="overlay-16-9">🎵 अभिनंदन गीत एवं सर्वधर्म प्रार्थना सभा</div>
-            </div>
+        <!-- 16:9 Aspect Ratio Program Gallery Grid -->
+     <div class="grid-16-9">
+    
+    <!-- 1. School (विद्यालय प्रांगण - Top Banner) -->
+    <div class="item-16-9 span-2-col" onclick="openModal('1000088696.jpg')">
+        <img src="1000088696.jpg" alt="विद्यालय प्रांगण एवं 15 अगस्त स्वतंत्रता दिवस मंच">
+        <div class="overlay-16-9">🏫 1. एकीकृत शासकीय नवीन माध्यमिक शाला जोवा - स्वतंत्रता दिवस प्रांगण</div>
+    </div>
 
-            <!-- 3. Video: Little Girls Welcome Song -->
-            <div class="item-16-9">
-                <video controls preload="metadata" class="w-full h-full object-cover">
-                    <source src="1000088703.mp4" type="video/mp4">
-                    <source src="1000088376.mp4" type="video/mp4">
-                    आपका ब्राउज़र वीडियो को सपोर्ट नहीं करता।
-                </video>
-                <div class="overlay-16-9" style="bottom: 40px; pointer-events: none;">▶️ नन्हीं छात्राओं का मधुर गायन (Video)</div>
-            </div>
+    <!-- 2. Laxmi Bai Natya (रानी लक्ष्मीबाई नाट्य मंचन Video) -->
+    <div class="item-16-9">
+        <video controls preload="metadata" class="w-full h-full object-cover">
+            <source src="1000088702.mp4" type="video/mp4">
+            आपका ब्राउज़र वीडियो को सपोर्ट नहीं करता।
+        </video>
+        <div class="overlay-16-9" style="bottom: 40px; pointer-events: none;">🎭 2. वीरांगना रानी लक्ष्मीबाई नाट्य मंचन (Video)</div>
+    </div>
 
-            <!-- 4. Video: Laxmibai Natak & Dance -->
-            <div class="item-16-9">
-                <video controls preload="metadata" class="w-full h-full object-cover">
-                    <source src="1000088702.mp4" type="video/mp4">
-                    <source src="1000088371.mp4" type="video/mp4">
-                    आपका ब्राउज़र वीडियो को सपोर्ट नहीं करता।
-                </video>
-                <div class="overlay-16-9" style="bottom: 40px; pointer-events: none;">▶️ रानी लक्ष्मीबाई शौर्य नाटक व नृत्य (Video)</div>
-            </div>
+    <!-- 3. Teri Mitti Me Mil Java Dance (नन्हीं छात्राओं का मधुर गायन व नृत्य Video) -->
+    <div class="item-16-9">
+        <video controls preload="metadata" class="w-full h-full object-cover">
+            <source src="1000088703.mp4" type="video/mp4">
+            आपका ब्राउज़र वीडियो को सपोर्ट नहीं करता।
+        </video>
+        <div class="overlay-16-9" style="bottom: 40px; pointer-events: none;">🇮🇳 3. "तेरी मिट्टी में मिल जावाँ" - देशभक्ति नृत्य व गायन (Video)</div>
+    </div>
 
-            <!-- 5. Laxmibai Group Dance Photo -->
-            <div class="item-16-9" onclick="openModal('1000088698.jpg')">
-                <img src="1000088698.jpg" alt="तिरंगा पट्टे में सजी बालिकाओं का समूह नृत्य" onerror="this.src='1000088372.jpg'">
-                <div class="overlay-16-9">🇮🇳 देशभक्ति नृत्य प्रस्तुति - भारत माता व वीरांगनाएँ</div>
-            </div>
+    <!-- 4. Speech (छात्र द्वारा प्रेरणादायी भाषण) -->
+    <div class="item-16-9" onclick="openModal('1000088700.jpg')">
+        <img src="1000088700.jpg" alt="नन्हे छात्र द्वारा ओजस्वी भाषण व कविता पाठ">
+        <div class="overlay-16-9">🎤 4. छात्र द्वारा प्रेरणादायी 15 अगस्त भाषण एवं कविता पाठ</div>
+    </div>
 
-            <!-- 6. Kids Speech with Mic Photo -->
-            <div class="item-16-9" onclick="openModal('1000088700.jpg')">
-                <img src="1000088700.jpg" alt="नन्हे छात्र द्वारा ओजस्वी भाषण व कविता पाठ" onerror="this.src='1000088375.jpg'">
-                <div class="overlay-16-9">🎤 नन्हे छात्र द्वारा ओजस्वी भाषण एवं कविता पाठ</div>
-            </div>
+    <!-- 5. Gayan Abhinandan (गायन एवं अभिनंदन गीत) -->
+    <div class="item-16-9" onclick="openModal('1000088701.jpg')">
+        <img src="1000088701.jpg" alt="अभिनंदन गीत एवं सर्वधर्म प्रार्थना सभा">
+        <div class="overlay-16-9">🎵 5. स्वागत गान, अभिनंदन गीत एवं सर्वधर्म प्रार्थना</div>
+    </div>
 
-            <!-- 7. Group Dance Action Photo -->
-            <div class="item-16-9" onclick="openModal('1000088699.jpg')">
-                <img src="1000088699.jpg" alt="देशभक्ति गीत पर बच्चों की मनमोहक प्रस्तुति" onerror="this.src='1000088374.jpg'">
-                <div class="overlay-16-9">💃 'मेरा देश शालीन देश' - सांस्कृतिक समूह प्रस्तुति</div>
-            </div>
+    <!-- 6. Dance (तिरंगा वेशभूषा समूह नृत्य - भाग 1) -->
+    <div class="item-16-9" onclick="openModal('1000088698.jpg')">
+        <img src="1000088698.jpg" alt="तिरंगा पट्टे में सजी बालिकाओं का समूह नृत्य">
+        <div class="overlay-16-9">💃 6. तिरंगा वेशभूषा में बालिकाओं का समूह देशभक्ति नृत्य</div>
+    </div>
 
-            <!-- 8. Prize Distribution Photo (Span 2 Columns) -->
-            <div class="item-16-9 span-2-col" onclick="openModal('1000088697.jpg')">
-                <img src="1000088697.jpg" alt="अतिथियों द्वारा नन्हे बच्चों को पुरस्कार एवं उपहार वितरण" onerror="this.src='1000088360.jpg'">
-                <div class="overlay-16-9">🏆 पूर्व जिला पंचायत अध्यक्ष, सरपंच एवं अतिथियों द्वारा नन्हे बच्चों का सम्मान एवं पुरस्कार वितरण</div>
-            </div>
-        </div>
+    <!-- 7. Dance (सांस्कृतिक समूह नृत्य - भाग 2) -->
+    <div class="item-16-9" onclick="openModal('1000088699.jpg')">
+        <img src="1000088699.jpg" alt="मेरा देश शालीन देश सांस्कृतिक समूह नृत्य">
+        <div class="overlay-16-9">💃 7. 'मेरा देश शालीन देश' - सांस्कृतिक समूह नृत्य प्रस्तुति</div>
+    </div>
+
+    <!-- 8. Puraskar (सरपंच एवं शिक्षकों द्वारा पुरस्कार वितरण) -->
+    <div class="item-16-9 span-2-col" onclick="openModal('1000088749.jpg')">
+        <img src="1000088749.jpg" alt="सरपंच एवं शिक्षकों द्वारा पुरस्कार वितरण" onerror="this.src='1000088697.jpg'">
+        <div class="overlay-16-9">🏆 8. पूर्व जिला पंचायत अध्यक्ष, सरपंच एवं शिक्षकों द्वारा नन्हे बच्चों को पुरस्कार वितरण</div>
+    </div>
+
+</div>
+        
+
 
     </div>
 </section>
