@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="hi-IN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="जोवा गाँव - मध्य प्रदेश का ऐतिहासिक और कृषि प्रधान गाँव, स्वतंत्रता दिवस समारोह, स्थानीय संस्कृति, आर्थिक पहल, डेयरी और संपर्क विवरण के साथ विस्तृत जानकारी।">
+    <meta name="keywords" content="जोवा, जोबा, करेली, नर्सिंहपुर, नरसिंहपुर, 15 अगस्त, स्वतंत्रता दिवस, बाल उत्सव, गाँव, गाव, कृषि, ऐतिहासिक धरोहर, डेयरी, ग्रामीण विकास">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="RajP7Jowa">
+    <link rel="canonical" href="https://rajp7jowa.github.io/jowa/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="जोवा गाँव - आधुनिक ग्रामीण विकास और ऐतिहासिक विरासत">
+    <meta property="og:description" content="जोवा की समृद्ध विरासत, 15 अगस्त स्वतंत्रता दिवस समारोह, सामाजिक संरचना, आर्थिक परिदृश्य और स्थानीय संपर्क जानकारी देखें।">
+    <meta property="og:image" content="1000088370.jpg">
+    <meta property="og:url" content="https://rajp7jowa.github.io/jowa/">
+    <meta property="og:site_name" content="जोवा गाँव">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="जोवा गाँव - आधुनिक ग्रामीण विकास और ऐतिहासिक विरासत">
+    <meta name="twitter:description" content="जोवा की समृद्ध विरासत, 15 अगस्त स्वतंत्रता दिवस समारोह, सामाजिक संरचना, आर्थिक परिदृश्य और स्थानीय संपर्क जानकारी देखें।">
+    <meta name="twitter:image" content="1000088370.jpg">
+    <link rel="icon" href="1000088370.jpg">
+    <title>जोवा गाँव - स्वतंत्रता दिवस समारोह एवं ग्रामीण विरासत | Jowa Village</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: '#FF9933',
+                        indiaGreen: '#138808',
+                        navyBlue: '#000080'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&family=Yantramanav:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #f4f7fb;
+            --bg-secondary: #eef3f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --surface: #ffffff;
+            --radius: 16px;
+        }
+        .dark {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --surface: #1e293b;
+        }
+        .title-font { font-family: 'Tiro Devanagari', serif; }
+        .body-font { font-family: 'Noto Sans Devanagari', sans-serif; }
+        * { font-family: 'Noto Sans Devanagari', sans-serif; }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .card {
+            background-color: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(15, 23, 42, 0.12);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            text-align: center;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 72px;
+            height: 4px;
+            background: linear-gradient(90deg, #FF9933, #138808);
+            border-radius: 2px;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+            color: var(--text-primary);
+        }
+        .nav-link:hover { color: #d97706; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d97706;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.92);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+        }
+        .modal.active { display: flex; }
+        .modal img {
+            max-width: 92%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 38px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* 16:9 Aspect Ratio Grid Styles */
+        .grid-16-9 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .item-16-9 {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #e2e8f0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+        .dark .item-16-9 {
+            background-color: #334155;
+            border: 1px solid rgba(51, 65, 85, 0.6);
+        }
+        .item-16-9 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .item-16-9:hover img {
+            transform: scale(1.06);
+        }
+        .overlay-16-9 {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 40%, transparent 80%);
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .span-2-col {
+            grid-column: span 2;
+        }
+        @media (max-width: 768px) {
+            .span-2-col { grid-column: span 1; }
+            .grid-16-9 { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "जोवा गाँव",
+      "url": "https://rajp7jowa.github.io/jowa/",
+      "description": "जोवा गाँव की कृषि, इतिहास, 15 अगस्त स्वतंत्रता दिवस समारोह और समाज पर केंद्रित वेबसाइट",
+      "publisher": {
+        "@type": "Organization",
+        "name": "जोवा गाँव",
+        "url": "https://rajp7jowa.github.io/jowa/"
+      }
+    }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+
+<!-- Site Navigation -->
+<header class="site-nav sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3 font-bold text-lg text-gray-800 dark:text-gray-100">
+            <img src="1000088370.jpg" alt="जोवा लोगो" class="h-9 w-9 rounded-full object-cover shadow" onerror="this.src='favicon.png'" />
+            <span class="title-font text-xl">जोवा गाँव</span>
+        </a>
+
+        <nav class="hidden xl:flex items-center gap-5">
+            <a href="#home" class="nav-link text-sm font-semibold">🏠 मुख्य</a>
+            <a href="#independence-day" class="nav-link text-sm font-semibold text-amber-600 dark:text-amber-400 font-bold">🇮🇳 15 अगस्त विशेष</a>
+            <a href="#gallery" class="nav-link text-sm font-semibold">🖼️ 16:9 गैलरी</a>
+            <a href="#history" class="nav-link text-sm font-semibold">📚 ऐतिहासिक</a>
+            <a href="#society" class="nav-link text-sm font-semibold">👥 समाज</a>
+            <a href="#economy" class="nav-link text-sm font-semibold">💼 अर्थव्यवस्था</a>
+            <a href="#dairy" class="nav-link text-sm font-semibold">🥛 डेयरी</a>
+            <a href="#contact" class="nav-link text-sm font-semibold">📞 संपर्क</a>
+            <button id="themeToggle" class="text-xs font-semibold px-3 py-1.5 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition">🌙 डार्क मोड</button>
+        </nav>
+
+        <button id="mobileMenuBtn" type="button" class="xl:hidden p-2 rounded-md text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
+            ☰
+        </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="xl:hidden hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <div class="flex flex-col px-4 py-3 space-y-2">
+            <a href="#home" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">🏠 मुख्य</a>
+            <a href="#independence-day" class="py-2 px-2 rounded-md text-amber-600 dark:text-amber-400 font-bold hover:bg-gray-100 dark:hover:bg-gray-800">🇮🇳 15 अगस्त स्वतंत्रता दिवस</a>
+            <a href="#gallery" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">🖼️ 16:9 गैलरी ग्रिड</a>
+            <a href="#history" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">📚 ऐतिहासिक</a>
+            <a href="#society" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">👥 समाज</a>
+            <a href="#economy" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">💼 अर्थव्यवस्था</a>
+            <a href="#dairy" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">🥛 डेयरी</a>
+            <a href="#contact" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">📞 संपर्क</a>
+            <button id="themeToggleMobile" class="py-2 px-2 rounded-md text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 text-left">🌙 डार्क मोड</button>
+        </div>
+    </div>
+</header>
+
+<!-- 1. Hero Section -->
+<section id="home" class="py-20 px-4 text-center bg-gradient-to-b from-orange-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 fade-in-up">
+    <div class="container mx-auto max-w-4xl">
+        <img src="1000088370.jpg" alt="जोवा स्कूल प्रांगण" class="h-24 w-24 object-cover mx-auto mb-6 rounded-full shadow-lg border-2 border-amber-500" onerror="this.src='favicon.png'">
+        <div class="inline-block bg-white dark:bg-gray-800 px-4 py-1.5 rounded-full shadow-sm text-sm font-bold text-amber-600 dark:text-amber-400 mb-4 border border-gray-200 dark:border-gray-700">
+            🌾 ऐतिहासिक और कृषि प्रधान गाँव
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 title-font">जोवा गाँव (Jowa)</h1>
+        <p class="text-2xl mb-4 body-font font-medium text-gray-700 dark:text-gray-200">आपका स्वागत है इस ऐतिहासिक और कृषि प्रधान समुदाय में</p>
+        <p class="text-lg max-w-2xl mx-auto leading-relaxed mb-8 body-font text-gray-600 dark:text-gray-300">जहाँ काली मिट्टी की समृद्धि, गोंडवाना की विरासत और किसानों की मेहनत मिलकर जीवन को पुष्पित करती है।</p>
+        <div class="flex justify-center gap-4 flex-wrap">
+            <a href="#independence-day" class="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow hover:opacity-95 transition">
+                🇮🇳 15 अगस्त कार्यक्रम
+            </a>
+            <a href="#gallery" class="px-6 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                🖼️ 16:9 फोटो गैलरी
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 2. 15th August Independence Day Celebration Section -->
+<section id="independence-day" class="py-20 px-4 bg-white dark:bg-gray-900 fade-in-up">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="section-title title-font text-gray-800 dark:text-white">🇮🇳 15 अगस्त स्वतंत्रता दिवस समारोह</h2>
+        <p class="text-center text-gray-600 dark:text-gray-400 -mt-4 mb-10 text-base body-font">गाँव के एकीकृत शासकीय नवीन माध्यमिक शाला के नन्हे-मुन्ने बच्चों द्वारा प्रस्तुत अद्भुत एवं प्रेरणादायक सांस्कृतिक कार्यक्रम</p>
+
+        <!-- Speech Card -->
+        <div class="card p-8 md:p-10 mb-12 border-l-8 border-l-amber-500 bg-amber-50/30 dark:bg-gray-800/60">
+            <div class="flex items-center gap-3 text-amber-600 dark:text-amber-400 font-bold text-xl mb-4">
+                <i class="fa-solid fa-microphone-lines text-2xl"></i>
+                <h3 class="title-font">बच्चों का उत्साहवर्धन एवं प्रोत्साहन भाषण</h3>
+            </div>
+            
+            <p class="text-lg text-gray-800 dark:text-gray-200 leading-relaxed mb-4 body-font">
+                <strong>आदरणीय पूर्व जिला पंचायत अध्यक्ष जी, सरपंच, सचिव, प्रधान शिक्षक, शिक्षकगण और मेरे प्यारे बच्चों!</strong>
+            </p>
+            <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4 body-font">
+                आज 15 अगस्त स्वतंत्रता दिवस पर हमारे गाँव के कक्षा 1 से 8 तक के नन्हे-मुन्ने बच्चों ने मंच पर अद्भुत प्रतिभा दिखाई है। अभिनंदन गीत से लेकर <em>'सुमन अर्पित है'</em> और <em>'हर देश में तू'</em> की सर्वधर्म प्रार्थना तक, हर प्रस्तुति दिल को छू गई।
+            </p>
+            <p class="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6 body-font">
+                <em>'हे जन्मभूमि भारत'</em> जैसी ओजस्वी कविताओं, हास्य प्रस्तुतियों और <strong>'झाँसी की रानी लक्ष्मीबाई'</strong> के बलिदान पर आधारित नाटक में बच्चों का अभिनय व देशभक्ति का जज़्बा वाकई काबिले-तारीफ़ रहा। इतने छोटे बच्चों का यह आत्मविश्वास देखकर पूरा गाँव गौरवान्वित है।
+            </p>
+
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 flex flex-wrap items-center gap-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <span class="text-amber-600 dark:text-amber-400 font-bold">गरमामयी उपस्थिति:</span>
+                <span>• पूर्व जिला पंचायत अध्यक्ष जी</span>
+                <span>• सरपंच महोदय</span>
+                <span>• ग्राम पंचायत सचिव</span>
+                <span>• प्रधान शिक्षक व समस्त शिक्षकगण</span>
+                <span>• समस्त ग्रामवासी एवं विद्यार्थी</span>
+            </div>
+        </div>
+
+        <!-- Performances Cards Grid -->
+        <h3 class="text-2xl font-bold mb-6 title-font text-gray-800 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-masks-theater text-amber-500"></i> सांस्कृतिक एवं देशभक्ति प्रस्तुतियों की सूची
+        </h3>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card p-6">
+                <div class="text-3xl text-amber-500 mb-3"><i class="fa-solid fa-hands-praying"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">अभिनंदन गीत</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">अतिथियों और अभिभावकों के स्वागत में मधुर अभिनंदन गीत का सस्वर गान।</p>
+            </div>
+
+            <div class="card p-6">
+                <div class="text-3xl text-red-500 mb-3"><i class="fa-solid fa-music"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">सुमन अर्पित है</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">आज़ादी के मतवाले शहीदों को सुमन अर्पित, जिनके त्याग और बलिदान से आज़ादी आई।</p>
+            </div>
+
+            <div class="card p-6">
+                <div class="text-3xl text-blue-500 mb-3"><i class="fa-solid fa-book-open"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">हे जन्मभूमि भारत</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">'हे जन्मभूमि भारत हे कर्मभूमि भारत' एवं 'मेरा देश शालीन देश' का सुंदर काव्य पाठ।</p>
+            </div>
+
+            <div class="card p-6">
+                <div class="text-3xl text-emerald-500 mb-3"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">रानी लक्ष्मीबाई नाटक</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">झाँसी की रानी लक्ष्मीबाई के शौर्य व अमर बलिदान पर आधारित प्रेरणादायक नाटक।</p>
+            </div>
+
+            <div class="card p-6">
+                <div class="text-3xl text-purple-500 mb-3"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">सर्वधर्म प्रार्थना</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">'हर देश में तू, हर भेष में तू' - राष्ट्रीय सद्भाव और एकता की पावन प्रार्थना।</p>
+            </div>
+
+            <div class="card p-6">
+                <div class="text-3xl text-yellow-500 mb-3"><i class="fa-solid fa-face-laugh-beam"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">हास्य कविता पाठ</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">प्राथमिक कक्षाओं के नन्हे बच्चों द्वारा मनमोहक और रोचक हास्य कविताएँ।</p>
+            </div>
+
+            <div class="card p-6">
+                <div class="text-3xl text-indigo-500 mb-3"><i class="fa-solid fa-person-running"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">देशभक्ति नृत्य</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">तिरंगे के रंगों में सजे नन्हे बच्चों का ऊर्जावान व देशभक्ति से परिपूर्ण नृत्य।</p>
+            </div>
+
+            <div class="card p-6">
+                <div class="text-3xl text-green-600 mb-3"><i class="fa-solid fa-award"></i></div>
+                <h4 class="font-bold text-lg mb-2 title-font">भाषण एवं पुरस्कार</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 body-font">अतिथियों द्वारा बच्चों का उत्साहवर्धन और उत्कृष्ट प्रस्तुति हेतु पुरस्कार वितरण।</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Photo Gallery 16:9 Grid Section (All User Attached Files Included) -->
+<section id="gallery" class="py-20 px-4 bg-gray-50 dark:bg-gray-800 fade-in-up">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="section-title text-center text-4xl font-bold mb-4 title-font text-gray-800 dark:text-white">🖼️ 16:9 रेज़ोल्यूशन कार्यक्रम गैलरी</h2>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-10 body-font">सभी चित्र 16:9 अनुपात में सेट हैं। ज़ूम करने के लिए किसी भी फ़ोटो पर क्लिक करें।</p>
+
+        <!-- 16:9 Grid Layout -->
+        <div class="grid-16-9">
+            
+            <!-- 1. School Building & Ground (Main 16:9 Feature) -->
+            <div class="item-16-9 span-2-col" onclick="openModal('1000088370.jpg')">
+                <img src="1000088370.jpg" alt="गाँव विद्यालय भवन एवं 15 अगस्त स्वतंत्रता दिवस प्रांगण">
+                <div class="overlay-16-9">🏫 एकीकृत शासकीय नवीन माध्यमिक शाला जोवा - स्वतंत्रता दिवस प्रांगण</div>
+            </div>
+
+            <!-- 2. Girls Welcome Song -->
+            <div class="item-16-9" onclick="openModal('1000088377.jpg')">
+                <img src="1000088377.jpg" alt="सर्वधर्म प्रार्थना एवं अभिनंदन गीत">
+                <div class="overlay-16-9">🎵 अभिनंदन गीत एवं सर्वधर्म प्रार्थना सभा</div>
+            </div>
+
+            <!-- 3. Laxmibai Natak Performance -->
+            <div class="item-16-9" onclick="openModal('1000088372.jpg')">
+                <img src="1000088372.jpg" alt="तिरंगा पट्टे में सजी बालिकाओं का समूह नृत्य">
+                <div class="overlay-16-9">🇮🇳 देशभक्ति नृत्य प्रस्तुति - भारत माता व वीरांगनाएँ</div>
+            </div>
+
+            <!-- 4. Kids Speech with Mic -->
+            <div class="item-16-9" onclick="openModal('1000088375.jpg')">
+                <img src="1000088375.jpg" alt="नन्हे छात्र द्वारा ओजस्वी भाषण व कविता पाठ">
+                <div class="overlay-16-9">🎤 नन्हे छात्र द्वारा ओजस्वी भाषण एवं कविता पाठ</div>
+            </div>
+
+            <!-- 5. Group Dance Action -->
+            <div class="item-16-9" onclick="openModal('1000088374.jpg')">
+                <img src="1000088374.jpg" alt="देशभक्ति गीत पर बच्चों की मनमोहक प्रस्तुति">
+                <div class="overlay-16-9">💃 'मेरा देश शालीन देश' - सांस्कृतिक समूह प्रस्तुति</div>
+            </div>
+
+            <!-- 6. Prize Distribution -->
+            <div class="item-16-9 span-2-col" onclick="openModal('1000088360.jpg')">
+                <img src="1000088360.jpg" alt="अतिथियों द्वारा नन्हे बच्चों को पुरस्कार एवं उपहार वितरण">
+                <div class="overlay-16-9">🏆 पूर्व जिला पंचायत अध्यक्ष, सरपंच एवं अतिथियों द्वारा नन्हे बच्चों का सम्मान एवं पुरस्कार वितरण</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 4. History Section -->
+<section id="history" class="py-20 px-4 bg-white dark:bg-gray-900 fade-in-up">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="section-title text-center text-4xl font-bold mb-12 title-font text-gray-800 dark:text-white">📚 ऐतिहासिक पृष्ठभूमि</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">प्राचीन विरासत (शैल चित्र)</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed body-font">जोवा के निकट स्थित 'बिंकी टोला' और आसपास की गुफाओं में प्रागैतिहासिक काल के शैल चित्र पाए गए हैं। यह नर्मदा घाटी की प्राचीन सभ्यता का हिस्सा है, जो पाषाण काल से मानव उपस्थिति को दर्शाता है।</p>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">गोंडवाना साम्राज्य</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed body-font">15वीं-16वीं शताब्दी में यह क्षेत्र 'गोंड राजा संग्राम शाह' के 'बावन गढ़' साम्राज्य के अंतर्गत 'चौरागढ़' प्रशासनिक इकाई का हिस्सा था। यहाँ की कृषि संस्कृति में गोंडकालीन जल प्रबंधन की झलक आज भी मिलती है।</p>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">व्यापारिक उदय (1904)</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed body-font">बीसवीं सदी की शुरुआत में (लगभग 1904), जब 'राजा गोकुल दास' (जबलपुर के प्रसिद्ध उद्योगपति) ने क्षेत्र में व्यापारिक विस्तार किया, तब करेली और उसके समीपवर्ती गाँवों जैसे जोबा में कपास की खेती को बढ़ावा मिला। रेलवे के विस्तार ने इसे एक प्रमुख कमर्शियल हब के रूप में स्थापित किया।</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Society Section -->
+<section id="society" class="py-20 px-4 bg-gray-50 dark:bg-gray-800 fade-in-up">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="section-title text-center text-4xl font-bold mb-12 title-font text-gray-800 dark:text-white">👥 सामाजिक एवं धार्मिक संरचना</h2>
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-6 title-font text-green-700 dark:text-green-300">धार्मिक आस्था</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 body-font">गाँव की आध्यात्मिक पहचान 'नर्मदा नदी' और पास के 'बरमान घाट' से जुड़ी है। यहाँ 'पोला' पर्व पर बैलों की पूजा और मकर संक्रांति पर नर्मदा स्नान की गहरी परंपरा है।</p>
+            </div>
+            <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-6 title-font text-green-700 dark:text-green-300">प्रगतिशील समाज</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 body-font">जोवा गाँव को वैश्विक पहचान यहाँ की बेटी 'तपस्या परिहार' (IAS 2018 बैच) से मिली। विवाह के दौरान 'कन्यादान' की रस्म को अस्वीकार कर उन्होंने गाँव की प्रगतिशील और आधुनिक सोच को देश के सामने रखा।</p>
+            </div>
+        </div>
+        <div class="card p-8">
+            <h3 class="text-2xl font-bold mb-6 title-font text-green-700 dark:text-green-300">जनसांख्यिकी और जातिगत ढांचा</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                    <div class="text-4xl font-bold text-green-600 mb-2">73%</div>
+                    <p class="text-gray-600 dark:text-gray-400 body-font font-semibold">सामान्य एवं पिछड़ा वर्ग</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 body-font">ब्राह्मण, जैन/बनिया, पटेल/कुर्मी</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">16%</div>
+                    <p class="text-gray-600 dark:text-gray-400 body-font font-semibold">अनुसूचित जनजाति</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 body-font">गोंड समुदाय</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">11%</div>
+                    <p class="text-gray-600 dark:text-gray-400 body-font font-semibold">अनुसूचित जाति</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 body-font">मेहरा समाज</p>
+                </div>
+            </div>
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <div class="text-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                    <div class="text-3xl font-bold text-pink-600 mb-2">1037</div>
+                    <p class="text-gray-600 dark:text-gray-400 body-font font-semibold">लिंगानुपात</p>
+                </div>
+                <div class="text-center p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
+                    <div class="text-3xl font-bold text-pink-600 mb-2">1471</div>
+                    <p class="text-gray-600 dark:text-gray-400 body-font font-semibold">बाल लिंगानुपात</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. Economy Section -->
+<section id="economy" class="py-20 px-4 bg-white dark:bg-gray-900 fade-in-up">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="section-title text-center text-4xl font-bold mb-12 title-font text-gray-800 dark:text-white">💼 आर्थिक परिदृश्य</h2>
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">मिट्टी की विशेषता</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed body-font">जोवा में 'भारी काली मिट्टी' (Deep Black Soil) पाई जाती है, जिसे स्थानीय स्तर पर 'काबरी' या 'कनहर' मिट्टी भी कहा जाता है। यह गन्ने और गेहूं की फसल के लिए विश्व की सबसे उर्वर मिट्टियों में से एक मानी जाती है।</p>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">करेली गुड़ मंडी</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed body-font">जोवा के किसान अपनी फसल मुख्य रूप से 'करेली गुड़ मंडी' में बेचते हैं। यहाँ का 'कचिया' गुड़ अपनी शुद्धता और स्वाद के लिए प्रसिद्ध है। गन्ने की खेती यहाँ की समृद्धि का मुख्य स्रोत है।</p>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">डेयरी उद्योग</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed body-font">गाँव में पशुपालन एक संगठित व्यवसाय बन चुका है। दूध की खरीदी के लिए 'FAT और SNF' आधारित पारदर्शी प्रणाली लागू है, जिससे छोटे किसानों को सीधा लाभ मिलता है।</p>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">कनेक्टिविटी</h3>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed body-font">गाँव 'करेली शहर से मात्र 3 किमी' की दूरी पर स्थित है, जिससे इसे शहरी सुविधाओं और ग्रामीण शांति दोनों का लाभ मिलता है।</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. Dairy Section -->
+<section id="dairy" class="py-20 px-4 bg-gray-50 dark:bg-gray-800 fade-in-up">
+    <div class="container mx-auto text-center max-w-4xl">
+        <h2 class="section-title text-4xl font-bold mb-12 title-font text-gray-800 dark:text-white">🥛 सिल्प डेयरी दूध</h2>
+        <div class="card p-12 max-w-2xl mx-auto">
+            <div class="text-6xl mb-6">🚧</div>
+            <h3 class="text-2xl font-bold mb-4 title-font text-green-700 dark:text-green-300">जल्द आ रहा है</h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 body-font">हमारी नई डेयरी ऐप जल्द ही उपलब्ध होगी। उच्च गुणवत्ता वाला दूध, पारदर्शी मूल्य निर्धारण और सीधा किसान-उपभोक्ता संपर्क।</p>
+            <button class="play-store-btn inline-block">
+                <span class="text-lg">📱 Play Store पर उपलब्ध होगा</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 8. Contact & Suggestions Section -->
+<section id="contact" class="py-20 px-4 bg-white dark:bg-gray-900 fade-in-up">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="section-title text-center text-4xl font-bold mb-12 title-font text-gray-800 dark:text-white">📞 संपर्क एवं सुझाव</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <!-- Contact Form -->
+            <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-6 title-font text-green-700 dark:text-green-300">📧 हमें संदेश भेजें</h3>
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block mb-2 font-semibold body-font">आपका नाम</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all body-font">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold body-font">ईमेल</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all body-font">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold body-font">विषय</label>
+                        <input type="text" name="subject" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all body-font">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-semibold body-font">संदेश</label>
+                        <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-green-500 focus:ring-2 focus:ring-green-200 dark:focus:ring-green-800 transition-all body-font"></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition body-font">संदेश भेजें 📨</button>
+                </form>
+                <div id="formMessage" class="mt-4"></div>
+            </div>
+
+            <!-- Contact Info & Map -->
+            <div class="space-y-6">
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">📍 गाँव कार्यालय</h3>
+                    <p class="text-gray-700 dark:text-gray-300 body-font leading-relaxed">जोवा (जोबा) गाँव<br>तहसील: करेली<br>जिला: नर्सिंहपुर<br>राज्य: मध्य प्रदेश<br>ईमेल: p7jowa@gmail.com</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold mb-4 title-font text-green-700 dark:text-green-300">🗺️ स्थान</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.123456789012!2d79.123456!3d22.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU5JzI3LjUiTiA3OcKwMDcnMjYuMyJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Refactored "हमसे जुड़ें" Social Connect Badge (Facebook & YouTube Only) -->
+        <div class="flex justify-center mt-6">
+            <div class="inline-flex items-center gap-6 px-8 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg">
+                <span class="text-2xl font-black text-gray-800 dark:text-white" style="font-family: 'Yantramanav', sans-serif;">हमसे जुड़ें</span>
+                <div class="w-0.5 h-8 bg-gray-300 dark:bg-gray-600"></div>
+                <div class="flex items-center gap-4">
+                    <!-- Facebook Button -->
+                    <a href="https://facebook.com/P7Jowa" target="_blank" rel="noopener noreferrer" class="h-12 w-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#1877F2] to-[#0E5ECE] shadow hover:scale-110 transition" title="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <!-- YouTube Button -->
+                    <a href="https://www.youtube.com/@p7jowa" target="_blank" rel="noopener noreferrer" class="h-12 w-16 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#FF0000] to-[#CC0000] shadow hover:scale-110 transition" title="YouTube">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff">
+                            <path d="M10 15l5.19-3L10 9v6z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-green-800 text-white py-12 px-4">
+    <div class="container mx-auto text-center">
+        <p class="text-lg body-font">&copy; 2026 जोवा गाँव। सभी अधिकार सुरक्षित।</p>
+        <p class="mt-2 body-font">15 अगस्त स्वतंत्रता दिवस बाल प्रतिभा एवं ग्राम समुदाय के लिए ❤️ के साथ निर्मित</p>
+    </div>
+</footer>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img id="modalImage" src="" alt="गैलरी छवि">
+</div>
+
+<!-- JavaScript Logic -->
+<script>
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+    function setTheme(isDark) {
+        if (isDark) {
+            html.classList.add('dark');
+            if (themeToggle) themeToggle.textContent = '☀️ लाईट मोड';
+            if (themeToggleMobile) themeToggleMobile.textContent = '☀️ लाईट मोड';
+        } else {
+            html.classList.remove('dark');
+            if (themeToggle) themeToggle.textContent = '🌙 डार्क मोड';
+            if (themeToggleMobile) themeToggleMobile.textContent = '🌙 डार्क मोड';
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    function toggleTheme() {
+        setTheme(!html.classList.contains('dark'));
+    }
+
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggleMobile) themeToggleMobile.addEventListener('click', () => {
+        toggleTheme();
+        document.getElementById('mobileMenu')?.classList.add('hidden');
+    });
+
+    const themeStorage = localStorage.getItem('theme');
+    const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(themeStorage === 'dark' || (!themeStorage && preferDark));
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    function openModal(src) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        if (modal && modalImg) {
+            modalImg.src = src;
+            modal.classList.add('active');
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('imageModal')?.classList.remove('active');
+    }
+
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(document.getElementById('contactForm'));
+        const data = Object.fromEntries(formData);
+        console.log('संपर्क फॉर्म सबमिट:', data);
+
+        const messageDiv = document.getElementById('formMessage');
+        if (messageDiv) {
+            messageDiv.innerHTML = '<div class="bg-green-200 text-green-800 p-4 rounded-lg font-semibold dark:bg-green-800 dark:text-green-200 body-font">✅ धन्यवाद! आपका संदेश भेज दिया गया है। 24-48 घंटे में आपको जवाब मिलेगा।</div>';
+            setTimeout(() => { messageDiv.innerHTML = ''; }, 5000);
+        }
+
+        document.getElementById('contactForm')?.reset();
+    }
+
+    const observerOptions = {
+        threshold: 0.01,
+        rootMargin: '0px 0px -20px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        observer.observe(el);
+    });
+    document.querySelectorAll('section .section-title').forEach(el => {
+        observer.observe(el);
+    });
+
+    document.getElementById('home')?.classList.add('visible');
+
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobileMenu')?.classList.add('hidden');
+        });
+    });
+</script>
+
+</body>
+</html>
